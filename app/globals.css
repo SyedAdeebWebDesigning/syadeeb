@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dotted-background {
+    background-color: #181818; /* Dark background */
+    background-image: radial-gradient(circle,
+    rgba(255, 255, 255, 0.2) 0%, /* Light dot color */ rgba(0, 0, 0, 0) 11% /* Transparency to blend the dots */
+    );
+
+    /* Updated mask-image for smooth fade */
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
+    z-index: 0;
+    position: relative;
+    background-size: 20px 20px; /* Size of each dot */
+    background-position: center center; /* Align dots */
+    background-repeat: repeat; /* Repeat the pattern */
+}
+
+

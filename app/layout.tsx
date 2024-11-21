@@ -14,12 +14,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className={'bg-[#181818]'}>
         <body
-            className={`purple-dark text-foreground bg-background`}
+            className={`text-[#fff] bg-[#181818] font-sans `}
         >
         <NextUIProvider>
-            <main>{children}</main>
+            <main className={''}>{children}</main>
         </NextUIProvider>
         </body>
         </html>
