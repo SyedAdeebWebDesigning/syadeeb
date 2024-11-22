@@ -71,7 +71,7 @@ const HeroSection = () => {
                             <Link
                                 href="https://drive.google.com/file/d/1tNP4MWpOFyFWxw_BGqUZbZxbWs4l0MCm/view?usp=sharing"
                                 target="_blank"
-                                className="bg-[#3c3c3c] px-6 py-3 rounded-full text-primary text-lg sm:text-xl font-medium transition-transform duration-300 ease-in-out hover:scale-110"
+                                className="bg-[#555555] px-6 py-3 rounded-full text-white text-lg sm:text-xl font-medium transition-transform duration-300 ease-in-out hover:scale-110"
                             >
                                 Resume
                             </Link>
