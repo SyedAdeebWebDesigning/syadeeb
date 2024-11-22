@@ -1,23 +1,80 @@
+"use client"
+
 import {IoMdPin} from "react-icons/io";
+import {Avatar, Link} from "@nextui-org/react";
+import {SocialIcon} from "react-social-icons";
+import {motion} from "framer-motion"
+import {BackgroundBeamsWithCollision} from "@/app/components/ui/background-beams-with-collision";
 
 const HeroSection = () => {
     return (
-        <section className={'min-h-[50vh] flex items-start justify-center flex-col px-4'}>
-            {/* Location */}
-            <div className={'flex items-center justify-start space-x-2'}>
-                <IoMdPin className="text-2xl"/> {/* Icon size adjusted */}
-                <p className={'text-2xl'}>India</p>
-            </div>
+        <section
+            className="min-h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
+            <BackgroundBeamsWithCollision className={''}>
+                {/* Location and Image */}
+                <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8">
+                    {/* Owner Image */}
+                    <motion.div initial={{x: -200, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{delay: 0.5}}
+                                className={'border-primary border-4 p-1 rounded-full'}>
+                        <Avatar
+                            src="/owner.png"
+                            className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] "
+                            alt="Syed Adeeb"
+                        />
+                    </motion.div>
 
-            {/* Main Heading */}
-            <h1 className={'text-3xl sm:text-6xl md:text-7xl font-bold'}>
-                Hello, I'm <span className={'text-primary'}>Syed Adeeb</span>.
-            </h1>
+                    {/* Text Content */}
+                    <div className="text-center sm:text-left">
+                        {/* Location */}
+                        <motion.div className="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+                                    initial={{y: -200, opacity: 0}} animate={{y: 0, opacity: 1}}
+                                    transition={{delay: 0.4}}>
+                            <IoMdPin className="text-2xl text-primary"/>
+                            <p className="text-xl sm:text-2xl text-secondary">Aligarh, India</p>
+                        </motion.div>
 
-            {/* Subheading */}
-            <p className={'mt-1 text-3xl sm:text-4xl text-secondary'}>Full Stack Developer</p>
+                        {/* Main Heading */}
+                        <motion.h1 initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{delay: 1}}
+                                   className="text-4xl  sm:text-5xl md:text-7xl font-extrabold leading-tight">
+                            Hello, I'm{" "}
+                            <span
+                                className="text-primary">Syed Adeeb</span>
+                            .
+                        </motion.h1>
+
+                        {/* Subheading */}
+                        <motion.p className="mt-3 text-xl sm:text-2xl md:text-3xl text-secondary"
+                                  initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}}
+                                  transition={{delay: 1.25}}>
+                            Full Stack Developer
+                        </motion.p>
+
+                        {/* Social Links and Resume */}
+                        <motion.div className="mt-6 space-x-4 flex items-center justify-center sm:justify-start"
+                                    initial={{y: 200, opacity: 0}} animate={{y: 0, opacity: 1}}
+                                    transition={{delay: 0.7}}>
+                            {/* Social Icon */}
+                            <SocialIcon
+                                url="https://www.linkedin.com/in/syed-adeeb-b40192331/"
+                                bgColor={"#3c3c3c"}
+                                fgColor={"#00a360"}
+                                target="_blank"
+                                className="transition-transform duration-300 ease-in-out hover:scale-110"
+                            />
+                            {/* Resume Link */}
+                            <Link
+                                href="https://drive.google.com/file/d/1tNP4MWpOFyFWxw_BGqUZbZxbWs4l0MCm/view?usp=sharing"
+                                target="_blank"
+                                className="bg-[#3c3c3c] px-6 py-3 rounded-full text-primary text-lg sm:text-xl font-medium transition-transform duration-300 ease-in-out hover:scale-110"
+                            >
+                                Resume
+                            </Link>
+                        </motion.div>
+                    </div>
+                </div>
+            </BackgroundBeamsWithCollision>
         </section>
     );
-}
+};
 
 export default HeroSection;
