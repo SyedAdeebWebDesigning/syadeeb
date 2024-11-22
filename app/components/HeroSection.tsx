@@ -9,7 +9,7 @@ import {BackgroundBeamsWithCollision} from "@/app/components/ui/background-beams
 const HeroSection = () => {
     return (
         <section
-            className="min-h-[82vh] flex items-center justify-center flex-col px-4 bg-background">
+            className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
             <BackgroundBeamsWithCollision className={''}>
                 {/* Location and Image */}
                 <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8">
@@ -35,7 +35,7 @@ const HeroSection = () => {
 
                         {/* Main Heading */}
                         <motion.h1 initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{delay: 1}}
-                                   className="text-4xl  sm:text-5xl md:text-7xl font-extrabold leading-tight">
+                                   className="text-3xl  sm:text-5xl md:text-7xl font-extrabold leading-tight">
                             Hello, I'm{" "}
                             <span
                                 className="text-primary">Syed Adeeb</span>
