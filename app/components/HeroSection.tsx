@@ -60,7 +60,13 @@ const HeroSection = () => {
                                 fgColor={"#00a360"}
                                 target="_blank"
                                 className="transition-transform duration-300 ease-in-out hover:scale-110"
-                            />
+                            /> <SocialIcon
+                            url="https://github.com/SyedAdeebWebDesigning"
+                            bgColor={"#3c3c3c"}
+                            fgColor={"#00a360"}
+                            target="_blank"
+                            className="transition-transform duration-300 ease-in-out hover:scale-110"
+                        />
                             {/* Resume Link */}
                             <Link
                                 href="https://drive.google.com/file/d/1tNP4MWpOFyFWxw_BGqUZbZxbWs4l0MCm/view?usp=sharing"

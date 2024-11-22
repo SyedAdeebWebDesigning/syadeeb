@@ -12,6 +12,8 @@ import {
     NavbarMenuToggle,
 } from "@nextui-org/react";
 
+import Image from "next/image"
+
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -59,7 +61,8 @@ export default function App() {
                         className="w-full underline-offset-2 decoration-primary text-foreground underline font-semibold text-3xl"
 
                     >
-                        Syed Adeeb
+                        <Image src={'/syedadeeb.png'} alt={'Syed Adeeb'} width={200} height={100}
+                               className={'object-contain'}/>
                     </Link>
                 </NavbarBrand>
             </NavbarContent>

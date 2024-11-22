@@ -6,6 +6,9 @@ import {NextUIProvider} from "@nextui-org/react";
 export const metadata: Metadata = {
     title: "Syed Adeeb",
     description: "Syed Adeeb's personal website",
+    icons: {
+        icon: "/favicon.png",
+    },
 };
 
 export default function RootLayout({
