@@ -9,7 +9,7 @@ import {BackgroundBeamsWithCollision} from "@/app/components/ui/background-beams
 const HeroSection = () => {
     return (
         <section
-            className="min-h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
+            className="min-h-[82vh] flex items-center justify-center flex-col px-4 bg-background">
             <BackgroundBeamsWithCollision className={''}>
                 {/* Location and Image */}
                 <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8">
