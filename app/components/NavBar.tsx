@@ -55,17 +55,15 @@ export default function App() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <li className={'"w-full underline-offset-2 decoration-primary text-foreground underline font-semibold text-3xl'}>
-                        <Link
-                            href={`/`}
-                            color={"foreground"}
-                            className={"flex items-center gap-2"}
+                    <Link
+                        href={`/`}
+                        color={"foreground"}
+                        className="w-full underline-offset-2 decoration-primary text-foreground underline font-semibold text-3xl"
 
-                        >
-                            <Image src={'/syedadeeb.png'} alt={'Syed Adeeb'} width={200} height={100}
-                                   className={'object-contain'} objectFit={'contain'} loading={'eager'}/>
-                        </Link>
-                    </li>
+                    >
+                        <Image src={'/syedadeeb.png'} alt={'Syed Adeeb'} width={200} height={100}
+                               className={'object-contain'} objectFit={'contain'} loading={'eager'}/>
+                    </Link>
                 </NavbarBrand>
             </NavbarContent>
 
