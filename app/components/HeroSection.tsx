@@ -57,13 +57,13 @@ const HeroSection = () => {
                             <SocialIcon
                                 url="https://www.linkedin.com/in/syed-adeeb-b40192331/"
                                 bgColor={"#3c3c3c"}
-                                fgColor={"#00a360"}
+                                fgColor={"#ffffff"}
                                 target="_blank"
                                 className="transition-transform duration-300 ease-in-out hover:scale-110"
                             /> <SocialIcon
                             url="https://github.com/SyedAdeebWebDesigning"
                             bgColor={"#3c3c3c"}
-                            fgColor={"#00a360"}
+                            fgColor={"#ffffff"}
                             target="_blank"
                             className="transition-transform duration-300 ease-in-out hover:scale-110"
                         />
