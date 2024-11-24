@@ -54,7 +54,7 @@ export default function App() {
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
-                <NavbarBrand>
+                <NavbarBrand className={'backdrop-blur'}>
                     <Link
                         href={`/`}
                         color={"foreground"}

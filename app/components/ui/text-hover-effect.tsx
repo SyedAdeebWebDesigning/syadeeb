@@ -1,22 +1,23 @@
 "use client";
+
 import React, {useEffect, useRef, useState} from "react";
-import {motion} from "framer-motion";
 
 export const TextHoverEffect = ({
                                     text,
-                                    duration,
+                                    duration = 0.4,
                                 }: {
     text: string;
     duration?: number;
-    automatic?: boolean;
 }) => {
     const svgRef = useRef<SVGSVGElement>(null);
     const [cursor, setCursor] = useState({x: 0, y: 0});
     const [hovered, setHovered] = useState(false);
     const [maskPosition, setMaskPosition] = useState({cx: "50%", cy: "50%"});
 
+    const uniqueId = React.useId(); // Generate unique IDs for gradients and masks
+
     useEffect(() => {
-        if (svgRef.current && cursor.x !== null && cursor.y !== null) {
+        if (svgRef.current && cursor.x && cursor.y) {
             const svgRect = svgRef.current.getBoundingClientRect();
             const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100;
             const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100;
@@ -40,91 +41,59 @@ export const TextHoverEffect = ({
             className="select-none"
         >
             <defs>
-                <linearGradient
-                    id="textGradient"
-                    gradientUnits="userSpaceOnUse"
-                    cx="50%"
-                    cy="50%"
-                    r="25%"
-                >
-                    {hovered && (
-                        <>
-                            <stop offset="0%" stopColor={"var(--green-300)"}/>
-                            <stop offset="25%" stopColor={"var(--emerald-300)"}/>
-                            <stop offset="50%" stopColor={"var(--emerald-500)"}/>
-                            <stop offset="75%" stopColor={"var(--emerald-300)"}/>
-                            <stop offset="100%" stopColor={"var(--green-300)"}/>
-                        </>
-                    )}
+                {/* Text Gradient */}
+                <linearGradient id={`textGradient-${uniqueId}`} gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="var(--green-700)"/>
+                    <stop offset="50%" stopColor="var(--emerald-700)"/>
+                    <stop offset="100%" stopColor="var(--green-700)"/>
                 </linearGradient>
 
-                <motion.radialGradient
-                    id="revealMask"
+                {/* Radial Mask */}
+                <radialGradient
+                    id={`revealMask-${uniqueId}`}
                     gradientUnits="userSpaceOnUse"
+                    cx={maskPosition.cx}
+                    cy={maskPosition.cy}
                     r="20%"
-                    animate={maskPosition}
-                    transition={{duration: duration ?? 0, ease: "easeOut"}}
-
-                    // example for a smoother animation below
-
-                    //   transition={{
-                    //     type: "spring",
-                    //     stiffness: 300,
-                    //     damping: 50,
-                    //   }}
                 >
                     <stop offset="0%" stopColor="white"/>
                     <stop offset="100%" stopColor="black"/>
-                </motion.radialGradient>
-                <mask id="textMask">
+                </radialGradient>
+
+                <mask id={`textMask-${uniqueId}`}>
                     <rect
                         x="0"
                         y="0"
                         width="100%"
                         height="100%"
-                        fill="url(#revealMask)"
+                        fill={`url(#revealMask-${uniqueId})`}
                     />
                 </mask>
             </defs>
+
+            {/* Base White Stroke */}
             <text
                 x="50%"
                 y="50%"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                strokeWidth="0.3"
-                className="font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-900 fill-transparent text-[55px]  "
-                style={{opacity: hovered ? 0.7 : 0}}
+                stroke="#8c8c8c"
+                strokeWidth="0.5"
+                className="font-[helvetica] font-bold fill-transparent text-[55px]"
             >
                 {text}
             </text>
-            <motion.text
-                x="50%"
-                y="50%"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                strokeWidth="0.3"
-                className="font-[helvetica] font-bold fill-transparent text-[55px]  stroke-neutral-200 dark:stroke-neutral-600 "
-                initial={{strokeDashoffset: 1000, strokeDasharray: 1000}}
-                animate={{
-                    strokeDashoffset: 0,
-                    strokeDasharray: 1000,
-                }}
-                transition={{
-                    duration: 4,
-                    ease: "easeInOut",
-                }}
-            >
-                {text}
-            </motion.text>
+
+            {/* Gradient-Stroked Text with Hover Effect */}
             <text
                 x="50%"
                 y="50%"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                stroke="url(#textGradient)"
+                stroke={`url(#textGradient-${uniqueId})`}
                 strokeWidth="0.3"
-                mask="url(#textMask)"
-                className="font-[helvetica] font-bold fill-transparent text-[55px] "
+                mask={`url(#textMask-${uniqueId})`}
+                className="font-[helvetica] font-bold fill-transparent text-[55px]"
             >
                 {text}
             </text>
