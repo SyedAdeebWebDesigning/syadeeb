@@ -61,6 +61,12 @@ const HeroSection = () => {
                                 target="_blank"
                                 className="transition-transform duration-300 ease-in-out hover:scale-110"
                             /> <SocialIcon
+                            url="https://www.instagram.com/prokximus/"
+                            bgColor={"#3c3c3c"}
+                            fgColor={"#ffffff"}
+                            target="_blank"
+                            className="transition-transform duration-300 ease-in-out hover:scale-110"
+                        /> <SocialIcon
                             url="https://github.com/SyedAdeebWebDesigning"
                             bgColor={"#3c3c3c"}
                             fgColor={"#ffffff"}
