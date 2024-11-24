@@ -25,9 +25,9 @@ export function Experience() {
         },
         {
             date: "Early 2024",
-            title: "Created two major E-Commerce Projects",
+            title: "Created ",
             link: [
-                {title: "PROKX Wears", url: "https://prokx.vercel.app/"},
+                {title: "PROKX", url: "https://prokx.vercel.app/"},
                 {title: "Gadget Galaxy", url: "https://gadget-galaxy-ecommerce.vercel.app/"},
             ],
             description: "Developed two major personal E-Commerce projects.",
