@@ -18,7 +18,7 @@ export default function Home() {
             <section id="experience">
                 <MaxWidthWrapper>
                     <div>
-                        <Heading text={'Experience'}/>
+                        <Heading text={'Experience'} id={'Experience'}/>
                     </div>
                     <Experience/>
                 </MaxWidthWrapper>
@@ -26,7 +26,7 @@ export default function Home() {
             <section id="projects">
                 <MaxWidthWrapper>
                     <div>
-                        <Heading text={'Projects'}/>
+                        <Heading text={'Projects'} id={'Projects'}/>
                     </div>
                     {/* Add Project Content */}
                 </MaxWidthWrapper>
@@ -34,7 +34,7 @@ export default function Home() {
             <section id="skills">
                 <MaxWidthWrapper>
                     <div>
-                        <Heading text={'Skills'}/>
+                        <Heading text={'Skills'} id={'Skills'}/>
                     </div>
                     {/* Add Skills Content */}
                 </MaxWidthWrapper>
@@ -42,7 +42,7 @@ export default function Home() {
             <section id="contact">
                 <MaxWidthWrapper>
                     <div>
-                        <Heading text={'Contact'}/>
+                        <Heading text={'Contact'} id={'Contact'}/>
                     </div>
                     {/* Add Contact Content */}
                 </MaxWidthWrapper>
