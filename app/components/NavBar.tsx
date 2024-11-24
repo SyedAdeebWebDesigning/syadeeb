@@ -61,7 +61,7 @@ export default function App() {
                         className="w-full underline-offset-2 decoration-primary  text-foreground underline font-semibold text-3xl object-contain"
 
                     >
-                        <div className={'relative w-[200px] h-20'}>
+                        <div className={'relative size-[200px]'}>
                             <Image
                                 src="/syedadeeb.png"
                                 alt="Syed Adeeb"
