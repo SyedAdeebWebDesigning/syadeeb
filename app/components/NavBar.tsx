@@ -61,8 +61,13 @@ export default function App() {
                         className="w-full underline-offset-2 decoration-primary text-foreground underline font-semibold text-3xl object-contain"
 
                     >
-                        <Image src={'/syedadeeb.png'} alt={'Syed Adeeb'} width={200} height={100}
-                               objectFit={'contain'} loading={'eager'}/>
+                        <Image
+                            src="/syedadeeb.png"
+                            alt="Syed Adeeb"
+                            width={200}
+                            height={100}
+                            priority
+                        />
                     </Link>
                 </NavbarBrand>
             </NavbarContent>
