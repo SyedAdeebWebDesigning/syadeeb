@@ -24,7 +24,7 @@ export function Experience() {
             ],
         },
         {
-            date: "2024",
+            date: "Early 2024",
             title: "Created two major E-Commerce Projects",
             link: [
                 {title: "PROKX Wears", url: "https://prokx.vercel.app/"},
@@ -34,8 +34,8 @@ export function Experience() {
             images: [
                 "/assets/GG1.png",
                 "/assets/P1.png",
-                "/assets/GG2.png",
                 "/assets/P2.png",
+                "/assets/GG2.png",
             ],
         },
         {
