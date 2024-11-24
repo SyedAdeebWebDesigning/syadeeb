@@ -110,7 +110,7 @@ export function Projects() {
                     </div>
                 ) : null}
             </AnimatePresence>
-            <ul className="max-w-2xl mx-auto w-full gap-4">
+            <ul className="w-full mx-auto gap-4">
                 {projects.map((project) => (
                     <motion.div
                         layoutId={`card-${project.title}-${id}`}
