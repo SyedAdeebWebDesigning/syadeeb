@@ -62,7 +62,7 @@ export default function App() {
 
                     >
                         <Image src={'/syedadeeb.png'} alt={'Syed Adeeb'} width={200} height={100}
-                               className={'object-contain'} objectFit={'contain'}/>
+                               objectFit={'contain'} loading={'eager'}/>
                     </Link>
                 </NavbarBrand>
             </NavbarContent>
