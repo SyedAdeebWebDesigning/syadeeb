@@ -11,7 +11,7 @@ export default function Home() {
             <section className="border-b border-white/10 sticky top-0 bg-background z-[999]">
                 <NavBar/>
             </section>
-            <section>
+            <section id={"#hero"}>
                 <MaxWidthWrapper>
                     <HeroSection/>
                 </MaxWidthWrapper>
