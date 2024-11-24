@@ -81,18 +81,6 @@ export const TextHoverEffect = ({
                 </mask>
             </defs>
 
-            <text
-                x="50%"
-                y="50%"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                strokeWidth="0.3"
-                className="font-[helvetica] font-bold stroke-neutral-300  fill-transparent text-[55px]"
-                style={{opacity: hovered ? 0.7 : 0}}
-            >
-                {text}
-            </text>
-
             <motion.text
                 x="50%"
                 y="50%"
@@ -101,30 +89,35 @@ export const TextHoverEffect = ({
                 strokeWidth="0.5"
                 className="font-[helvetica] font-bold fill-transparent text-[55px] stroke-neutral-500"
                 initial={{strokeDashoffset: 1000, strokeDasharray: 1000}}
-                animate={{
+                whileInView={{
                     strokeDashoffset: 0,
                     strokeDasharray: 1000,
                 }}
                 transition={{
-                    duration: 4,
+                    duration: 9,
                     ease: "easeInOut",
                 }}
             >
                 {text}
             </motion.text>
 
-            <text
-                x="50%"
-                y="50%"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                stroke={`url(#textGradient-${id})`} // Use dynamic id
-                strokeWidth="1"
-                mask={`url(#textMask-${id})`} // Use dynamic id
-                className="font-[helvetica] font-bold fill-transparent text-[55px]"
-            >
-                {text}
-            </text>
+            {
+                hovered && (
+                    <text
+                        x="50%"
+                        y="50%"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        stroke={`url(#textGradient-${id})`} // Use dynamic id
+                        strokeWidth="1"
+                        mask={`url(#textMask-${id})`} // Use dynamic id
+                        className="font-[helvetica] font-bold fill-transparent text-[55px]"
+                    >
+                        {text}
+                    </text>
+                )
+            }
+
         </svg>
     );
 };
