@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e12b06ab-b47a-4eed-b401-4912908db021" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/components/Projects.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/use-outside-click.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ui/text-hover-effect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/text-hover-effect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +102,7 @@
       <updated>1732216408953</updated>
       <workItem from="1732216410847" duration="1254000" />
       <workItem from="1732217672376" duration="8024000" />
-      <workItem from="1732226149542" duration="26920000" />
+      <workItem from="1732226149542" duration="31740000" />
     </task>
     <servers />
   </component>

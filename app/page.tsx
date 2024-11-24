@@ -3,6 +3,7 @@ import NavBar from "@/app/components/NavBar";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import {Experience} from "@/app/components/Experience";
 import Heading from "@/app/components/Heading";
+import {Projects} from "@/app/components/Projects";
 
 export default function Home() {
     return (
@@ -28,7 +29,7 @@ export default function Home() {
                     <div>
                         <Heading text={'Projects'} id={'Projects'}/>
                     </div>
-                    {/* Add Project Content */}
+                    <Projects/>
                 </MaxWidthWrapper>
             </section>
             <section id="skills">

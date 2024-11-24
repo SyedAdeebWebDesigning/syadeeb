@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .dotted-background {
     background-color: #181818; /* Dark background */
     background-image: radial-gradient(circle,
