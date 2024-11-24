@@ -58,16 +58,18 @@ export default function App() {
                     <Link
                         href={`/`}
                         color={"foreground"}
-                        className="w-full underline-offset-2 decoration-primary text-foreground underline font-semibold text-3xl object-contain"
+                        className="w-full underline-offset-2 decoration-primary  text-foreground underline font-semibold text-3xl object-contain"
 
                     >
-                        <Image
-                            src="/syedadeeb.png"
-                            alt="Syed Adeeb"
-                            width={200}
-                            height={100}
-                            priority
-                        />
+                        <div className={'relative w-[200px] h-20'}>
+                            <Image
+                                src="/syedadeeb.png"
+                                alt="Syed Adeeb"
+                                fill
+
+                                className={'object-contain'}
+                                priority
+                            /></div>
                     </Link>
                 </NavbarBrand>
             </NavbarContent>
