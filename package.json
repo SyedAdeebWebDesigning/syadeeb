@@ -15,6 +15,8 @@
     "@nextui-org/theme": "^2.2.11",
     "@radix-ui/react-hover-card": "^1.1.2",
     "@tabler/icons-react": "^3.22.0",
+    "appwrite": "^16.0.2",
+    "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",

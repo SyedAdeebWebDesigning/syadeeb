@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e12b06ab-b47a-4eed-b401-4912908db021" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/components/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/HeroSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/register/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/actions/temp.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/actions/user.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/appwrite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -43,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.user.action.ts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
@@ -51,7 +60,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/adeeb/Desktop/programming related/syedadeeb/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -72,6 +81,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(auth)/register" />
       <recent name="$PROJECT_DIR$/public/assets" />
     </key>
   </component>
@@ -92,7 +102,7 @@
       <updated>1732216408953</updated>
       <workItem from="1732216410847" duration="1254000" />
       <workItem from="1732217672376" duration="8024000" />
-      <workItem from="1732226149542" duration="35090000" />
+      <workItem from="1732226149542" duration="43201000" />
     </task>
     <servers />
   </component>
