@@ -6,6 +6,7 @@ import {Button} from "@nextui-org/button";
 import {Input} from "@nextui-org/input";
 import {Card, CardBody} from "@nextui-org/card";
 import {toast} from "react-toastify";
+import {useRouter} from "next/navigation";
 
 export default function SignInPage() {
     const [form, setForm] = useState({
@@ -14,6 +15,8 @@ export default function SignInPage() {
     });
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
+    const router = useRouter()
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;
@@ -45,10 +48,12 @@ export default function SignInPage() {
 
         try {
             await signInUser(form.email, form.password);
-            toast.success("Sign-in successful!");
+            toast.success("Sign-in successful!", {
+                onClose: () => router.push("/"),
+            });
         } catch (err: any) {
             const message =
-                err?.response?.data?.message || err.message || "Sign-in failed.";
+                err?.response?.data?.message || err.message || "Sign-in failed. Please check your credentials.";
             setError(message);
             toast.error(message);
         } finally {
@@ -58,7 +63,7 @@ export default function SignInPage() {
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-background text-white">
-            <Card className="w-full max-w-md bg-neutral-800 border border-neutral-700 shadow-lg">
+            <Card className="w-full max-w-md bg-background border-2 border-neutral-800/30">
                 <CardBody>
                     <h1 className="text-3xl font-bold mb-4 text-center">Sign In</h1>
                     <form className="flex flex-col gap-6 py-4">
@@ -69,9 +74,9 @@ export default function SignInPage() {
                             name="email"
                             value={form.email}
                             onChange={handleChange}
-                            variant="underlined"
-                            color="primary"
-                            className="bg-neutral-700 text-neutral-200 rounded-lg focus:ring focus:ring-indigo-500"
+                            variant="flat"
+                            color="secondary"
+                            className="border-2 border-neutral-500 rounded-xl text-gray-300"
                         />
                         <Input
                             type="password"
@@ -80,9 +85,9 @@ export default function SignInPage() {
                             name="password"
                             value={form.password}
                             onChange={handleChange}
-                            variant="underlined"
-                            color="primary"
-                            className="bg-neutral-700 text-neutral-200 rounded-lg focus:ring focus:ring-indigo-500"
+                            variant="flat"
+                            color="secondary"
+                            className="border-2 border-neutral-500 rounded-xl text-gray-300"
                         />
                         <Button
                             color="primary"

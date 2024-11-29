@@ -7,6 +7,7 @@ import {Input} from "@nextui-org/input";
 import {FileUpload} from "@/app/components/ui/file-upload";
 import {Card, CardBody} from "@nextui-org/card";
 import {toast} from "react-toastify";
+import {useRouter} from "next/navigation";
 
 export default function Page() {
     const [form, setForm] = useState({
@@ -18,6 +19,7 @@ export default function Page() {
     });
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState(false);
+    const router = useRouter()
 
     const [file, setFile] = useState<File | null>(null);
 
@@ -50,14 +52,16 @@ export default function Page() {
                 setForm((prev) => ({...prev, imgUrl: imgData}));
 
                 await registerUser(
-                    form.email,
                     form.fullName,
+                    form.email,
                     form.password,
                     form.isAdmin,
                     imgData
                 );
                 setSuccess(true);
-                toast.success('Registration successful! You can now log in.');
+                toast.success('Registration successful! You can now log in.', {
+                    onClose: () => router.push('/auth/sign-in')
+                });
             };
             reader.onerror = () => {
                 throw new Error("Failed to read image file.");
