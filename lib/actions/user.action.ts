@@ -4,6 +4,7 @@ import {account, databases, ID} from "@/lib/appwrite";
 // @ts-ignore
 import bcrypt from "bcrypt";
 
+
 const DATABASE_ID = process.env.APPWRITE_DATABASE_ID; // Your Appwrite database ID
 const COLLECTION_ID = process.env.APPWRITE_USERS_COLLECTION_ID; // Your Appwrite collection ID
 
@@ -18,11 +19,11 @@ export const registerUser = async (
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
-        throw new Error("Invalid email format.");
+        console.error("Invalid email format.");
     }
 
     if (password.length < 8) {
-        throw new Error("Password must be at least 8 characters long.");
+        console.error("Password must be at least 8 characters long.");
     }
 
     try {
@@ -49,7 +50,7 @@ export const registerUser = async (
                 imgUrl,
             }
         );
-
+        
         return {authResponse, user};
     } catch (error) {
         console.error("Error registering user:", error);

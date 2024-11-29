@@ -1,7 +1,8 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import {NextUIProvider} from "@nextui-org/react";
-
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
     title: "Syed Adeeb",
@@ -22,6 +23,7 @@ export default function RootLayout({
             className={`text-[#fff] bg-[#181818] font-sans `}
         >
         <NextUIProvider>
+            <ToastContainer theme={'dark'}/>
             <main className={''}>{children}</main>
         </NextUIProvider>
         </body>
