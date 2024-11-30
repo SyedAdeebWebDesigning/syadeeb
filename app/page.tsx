@@ -4,11 +4,8 @@ import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import {Experience} from "@/app/components/Experience";
 import Heading from "@/app/components/Heading";
 import {Projects} from "@/app/components/Projects";
-import {getTempDocuments} from "@/lib/actions/temp.action";
 
 export default async function Home() {
-    const tempData = await getTempDocuments()
-    console.log(tempData)
     return (
         <>
             <section className="border-b border-white/10 sticky top-0 bg-background z-[999]">
