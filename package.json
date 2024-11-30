@@ -13,6 +13,8 @@
     "@nextui-org/react": "^2.4.8",
     "@nextui-org/system": "^2.2.6",
     "@nextui-org/theme": "^2.2.11",
+    "@prisma/client": "^6.0.0",
+    "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-hover-card": "^1.1.2",
     "@tabler/icons-react": "^3.23.0",
     "appwrite": "^16.0.2",
@@ -21,6 +23,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.460.0",
+    "mongodb": "^6.11.0",
     "next": "14.2.18",
     "next-themes": "^0.4.3",
     "qss": "^3.0.0",
@@ -40,6 +43,7 @@
     "@types/react-dom": "^18",
     "postcss": "^8",
     "prettier": "^3.3.3",
+    "prisma": "^6.0.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
