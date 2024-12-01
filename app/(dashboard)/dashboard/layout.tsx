@@ -1,5 +1,6 @@
 import Sidebar from "@/app/components/Sidebar";
 import React from "react";
+import {currentUser} from "@clerk/nextjs/server";
 
 
 type Props = {
@@ -7,16 +8,19 @@ type Props = {
 };
 
 const Layout = async ({children}: Props) => {
-
+    const user = await currentUser()
+    if (!user) {
+        return <div>Loading...</div>
+    }
     return (
         <main className="flex min-h-screen">
             {/* Sidebar */}
             <aside className="w-[20%] bg-neutral-900 text-white p-4">
                 {/* Add sidebar content here */}
                 <div className={''}>
-                    <Sidebar userFullname={"Syed Adeeb"}
-                             userEmail={"abidi9897401278@gmail.com"}
-                             userImg={"/owner.png"}
+                    <Sidebar userFullname={`${user.firstName} ${user.lastName}`}
+                             userEmail={user.emailAddresses[0].emailAddress}
+                             userImg={user.imageUrl}
 
                     />
                 </div>
