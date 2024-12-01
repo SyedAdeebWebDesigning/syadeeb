@@ -1,6 +1,6 @@
 "use server";
 
-import prismadb from "@/lib/prisma"; // Importing the Prisma client
+import prisma from "@/lib/prisma"; // Importing the Prisma client
 
 export interface CreateUserProps {
     firstName: string;
@@ -11,21 +11,19 @@ export interface CreateUserProps {
     imgUrl: string;
 }
 
-export const createUser = async (User: CreateUserProps) => {
+export const createUser = async (UserData: CreateUserProps) => {
     try {
         // Creating a new user in the database
-        const newUser = await prismadb.user.create({
+        return await prisma.user.create({
             data: {
-                clerkId: User.clerkId,
-                firstName: User.firstName,
-                lastName: User.lastName,
-                email: User.email,
-                isAdmin: User.isAdmin,
-                imgUrl: User.imgUrl,
+                clerkId: UserData.clerkId,
+                firstName: UserData.firstName,
+                lastName: UserData.lastName,
+                email: UserData.email,
+                isAdmin: UserData.isAdmin,
+                imgUrl: UserData.imgUrl,
             },
-
         });
-        return newUser
 
     } catch (error) {
         console.error("Error creating user:", error);
