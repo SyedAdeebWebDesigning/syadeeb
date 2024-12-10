@@ -29,7 +29,7 @@ const Layout = async ({children}: Props) => {
             </aside>
 
             {/* Main Content */}
-            <section className="flex-1 p-6 bg-background relative">
+            <section className="flex-1 p-6 dark:bg-background relative">
                 {children}
             </section>
         </main>

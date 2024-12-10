@@ -27,7 +27,7 @@ export default function RootLayout({
 
             <html lang="en" className={'scroll-smooth'}>
             <body
-                className={`text-[#fff] bg-white dark:bg-[#181818] font-sans `}
+                className={`text-[#fff] bg-[#181818] font-sans `}
             >
             <NextUIProvider>
                 <ToastContainer theme={'dark'}/>
