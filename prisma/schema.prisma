@@ -15,7 +15,7 @@ datasource db {
 
 model user {
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  clerkId   String
+  clerkId   String    @unique
   firstName String
   lastName  String
   email     String
@@ -23,4 +23,46 @@ model user {
   imgUrl    String
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt
+}
+
+model Experience {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  date        DateTime
+  title       String
+  arrayLinks  Link[] // Optional array of links
+  arrayImages Image[] // Requires between 1 and 4 images (programmatically enforced)
+}
+
+model Link {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  url          String
+  experienceId String?     @db.ObjectId // References Experience
+  experience   Experience? @relation(fields: [experienceId], references: [id])
+}
+
+model Image {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  url          String
+  experienceId String?     @db.ObjectId // References Experience
+  experience   Experience? @relation(fields: [experienceId], references: [id])
+}
+
+model Project {
+  id                String       @id @default(auto()) @map("_id") @db.ObjectId
+  title             String
+  description       String
+  image             String
+  ctaText           String
+  ctaLink           String
+  arrayTechnologies Technology[] // References multiple technologies
+}
+
+model Technology {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  shortDescription String
+  image            String
+  projectId        String?  @db.ObjectId // References Project
+  project          Project? @relation(fields: [projectId], references: [id])
 }

@@ -11,6 +11,7 @@ const {
 /** @type {import('tailwindcss').Config} */
 
 const config: Config = {
+    darkMode: "class", // Enable class-based dark mode
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,6 +20,7 @@ const config: Config = {
     ],
     theme: {
         extend: {
+
             colors: {
                 background: "var(--background)", // For custom background handling
                 foreground: "var(--foreground)", // For custom foreground handling
@@ -29,7 +31,9 @@ const config: Config = {
         addVariablesForColors,
         nextui({
             themes: {
+
                 dark: {
+
                     colors: {
                         primary: "#00a360", // Custom primary green
                         foreground: "#181818", // Dark background for dark theme

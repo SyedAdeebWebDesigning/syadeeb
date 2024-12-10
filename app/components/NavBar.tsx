@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, {useEffect, useState} from "react";
 import {
@@ -11,8 +11,8 @@ import {
     NavbarMenuItem,
     NavbarMenuToggle,
 } from "@nextui-org/react";
-
-import Image from "next/image"
+import {ThemeSwitcher} from "@/app/components/ThemeSwitcher";
+import {useTheme} from "@nextui-org/use-theme";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,6 +22,8 @@ export default function App() {
 
     // State to track the active menu item
     const [activeItem, setActiveItem] = useState<string | null>(null);
+
+    const {theme} = useTheme();
 
     // Update active menu item based on URL hash
     useEffect(() => {
@@ -58,18 +60,11 @@ export default function App() {
                     <Link
                         href={`/#`}
                         color={"foreground"}
-                        className="w-full underline-offset-2 decoration-primary  text-foreground underline font-semibold text-3xl object-contain"
-
+                        className="w-full text-foreground underline mt-2 underline-offset-[-12px] decoration-primary decoration-2  text-5xl object-contain"
                     >
-                        <div className={'relative w-[200px] h-8'}>
-                            <Image
-                                src="/syedadeeb.png"
-                                alt="Syed Adeeb"
-                                fill
-
-                                className={'object-contain'}
-                                priority
-                            /></div>
+                        <div className={'relative  h-12'}>
+                            <h3 className={'logo-text'}>Syed Adeeb</h3>
+                        </div>
                     </Link>
                 </NavbarBrand>
             </NavbarContent>
@@ -104,7 +99,6 @@ export default function App() {
                             }
                             className="w-full"
                             href={`/#${item.toLowerCase()}`} // Anchor links
-
                             onClick={() => setActiveItem(item)} // Set active item on click
                         >
                             {item}
@@ -112,6 +106,7 @@ export default function App() {
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
+            <ThemeSwitcher/>
         </Navbar>
     );
 }

@@ -4,7 +4,8 @@ import Image from "next/image";
 import React from "react";
 import {Timeline} from "@/app/components/ui/timeline";
 import {motion} from "framer-motion";
-import {LinkPreview} from "@/app/components/ui/link-preview";
+import {LinkPreview} from "@/app/components/ui/link-preview"; // Absolute path
+// import {LinkPreview} from "./ui/link-preview"; - Relative Path
 
 export function Experience() {
     const timelineData = [
@@ -150,7 +151,7 @@ export function Experience() {
                                 whileInView={{scale: 1, opacity: 1}}
                                 transition={{delay: 0.1}}
                             >
-                                <h3 className="text-2xl font-semibold text-neutral-100 mb-2">
+                                <h3 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-100 mb-2">
                                     {item.title}{" "}
                                     {item.link.length > 0 && formatLinks(item.link)}
                                 </h3>

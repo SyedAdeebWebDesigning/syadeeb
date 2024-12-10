@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Thesignature Regular';
+    src: url('fonts/thesignature.regular.otf') format('opentype'); /* OpenType format for compatibility */
+    font-weight: normal;
+    font-style: normal;
+}
 
 .dotted-background {
     background-color: #181818; /* Dark background */
@@ -76,10 +82,14 @@
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px var(--bg-dark) inset !important; /* Ensures background matches */
+    -webkit-box-shadow: 0 0 0 30px inset !important; /* Ensures background matches */
     -webkit-text-fill-color: white !important; /* Keeps text white */
 }
 
 input:-webkit-autofill:focus {
     -webkit-text-fill-color: white !important;
+}
+
+.logo-text {
+    font-family: 'Thesignature Regular', sans-serif; /* Use your font as the primary body font */
 }

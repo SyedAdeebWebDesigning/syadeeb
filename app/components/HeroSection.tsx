@@ -30,22 +30,24 @@ const HeroSection = () => {
                                     initial={{y: -200, opacity: 0}} animate={{y: 0, opacity: 1}}
                                     transition={{delay: 0.4}}>
                             <IoMdPin className="text-2xl text-primary"/>
-                            <p className="text-xl sm:text-2xl text-secondary">Aligarh, India</p>
+                            <p className="text-xl sm:text-2xl text-neutral-500 dark:text-secondaryDark">Aligarh,
+                                India</p>
                         </motion.div>
 
                         {/* Main Heading */}
                         <motion.h1 initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{delay: 1}}
-                                   className="text-3xl  sm:text-5xl md:text-7xl font-extrabold leading-tight">
+                                   className="text-3xl text-neutral-800  dark:text-white sm:text-5xl md:text-7xl font-extrabold leading-tight">
                             Hello, I'm{" "}
                             <span
-                                className="text-primary">Syed Adeeb</span>
+                                className="text-emerald-700 dark:text-primary">Syed Adeeb</span>
                             .
                         </motion.h1>
 
                         {/* Subheading */}
-                        <motion.p className="mt-3 text-xl sm:text-2xl md:text-3xl text-secondary"
-                                  initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}}
-                                  transition={{delay: 1.25}}>
+                        <motion.p
+                            className="mt-3 text-xl sm:text-2xl md:text-3xl text-neutral-500 dark:text-secondaryDark"
+                            initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}}
+                            transition={{delay: 1.25}}>
                             Full Stack Developer
                         </motion.p>
 

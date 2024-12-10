@@ -8,7 +8,8 @@ import {Projects} from "@/app/components/Projects";
 export default async function Home() {
     return (
         <>
-            <section className="border-b border-white/10 sticky top-0 bg-background z-[999]">
+            <section
+                className="border-b dark:border-white/10 border-black/10 sticky top-0 text-black dark:text-white z-[999]">
                 <NavBar/>
             </section>
             <section id={"#hero"}>
@@ -16,9 +17,9 @@ export default async function Home() {
                     <HeroSection/>
                 </MaxWidthWrapper>
             </section>
-            <section id="experience">
+            <section id="experience" className={'-mt-20'}>
                 <MaxWidthWrapper>
-                    <div>
+                    <div className={''}>
                         <Heading text={'Experience'} id={'Experience'}/>
                     </div>
                     <Experience/>

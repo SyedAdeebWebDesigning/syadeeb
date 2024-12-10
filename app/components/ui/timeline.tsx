@@ -27,7 +27,7 @@ export const Timeline = ({data}: { data: TimelineEntry[] }) => {
 
     const {scrollYProgress} = useScroll({
         target: containerRef,
-        offset: ["start 40%", "end 100%"],
+        offset: ["start 40%", "end 50%"],
     });
 
     const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -47,7 +47,7 @@ export const Timeline = ({data}: { data: TimelineEntry[] }) => {
                                 className="h-10 absolute left-3 md:left-3 w-10 rounded-full flex items-center justify-center">
                                 <div className="h-4 w-4 rounded-full bg-secondaryDark border border-gray-500 p-2"/>
                             </div>
-                            <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-gray-300">
+                            <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold dark:text-neutral-300 text-neutral-700">
                                 {item.title}
                             </h3>
                         </div>
