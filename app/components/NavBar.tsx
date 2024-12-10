@@ -12,7 +12,6 @@ import {
     NavbarMenuToggle,
 } from "@nextui-org/react";
 import {ThemeSwitcher} from "@/app/components/ThemeSwitcher";
-import {useTheme} from "@nextui-org/use-theme";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +22,6 @@ export default function App() {
     // State to track the active menu item
     const [activeItem, setActiveItem] = useState<string | null>(null);
 
-    const {theme} = useTheme();
 
     // Update active menu item based on URL hash
     useEffect(() => {
