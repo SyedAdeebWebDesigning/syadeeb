@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 
 import {useTheme} from "@nextui-org/use-theme";
