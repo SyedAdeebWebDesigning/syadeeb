@@ -17,7 +17,7 @@ export default async function Home() {
                     <HeroSection/>
                 </MaxWidthWrapper>
             </section>
-            <section id="experience" className={'-mt-20'}>
+            <section id="experience" className={''}>
                 <MaxWidthWrapper>
                     <div className={''}>
                         <Heading text={'Experience'} id={'Experience'}/>
