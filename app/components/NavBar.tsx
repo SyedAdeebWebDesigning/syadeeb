@@ -11,6 +11,7 @@ import {
     NavbarMenuItem,
     NavbarMenuToggle,
 } from "@nextui-org/react";
+import {ThemeSwitcher} from "@/app/components/ThemeSwitcher";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -103,7 +104,7 @@ export default function App() {
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
-            {/*<ThemeSwitcher/>*/}
+            <ThemeSwitcher/>
         </Navbar>
     );
 }
