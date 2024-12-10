@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {useTheme} from "@nextui-org/use-theme";
 import {Switch} from "@nextui-org/react";
 
-export const MoonIcon = (props) => (
+export const MoonIcon = (props: any) => (
     <svg
         aria-hidden="true"
         focusable="false"
@@ -21,7 +21,7 @@ export const MoonIcon = (props) => (
     </svg>
 );
 
-export const SunIcon = (props) => (
+export const SunIcon = (props: any) => (
     <svg
         aria-hidden="true"
         focusable="false"
