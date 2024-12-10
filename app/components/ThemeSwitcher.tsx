@@ -43,10 +43,11 @@ export const ThemeSwitcher = () => {
     const {theme, setTheme} = useTheme();
 
     useEffect(() => {
-        // Ensure theme is set from localStorage if available
-        const storedTheme = localStorage.getItem('theme');
-        if (storedTheme) {
-            setTheme(storedTheme);
+        if (typeof window !== "undefined") {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                setTheme(storedTheme);
+            }
         }
     }, [setTheme]);
 
