@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e12b06ab-b47a-4eed-b401-4912908db021" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Experience.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/HeroSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ThemeSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ThemeSwitcher.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ui/timeline.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/timeline.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/test/.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

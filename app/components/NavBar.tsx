@@ -58,10 +58,11 @@ export default function App() {
                     <Link
                         href={`/#`}
                         color={"foreground"}
-                        className="w-full text-foreground underline mt-2 underline-offset-[-12px] decoration-primary decoration-2  text-5xl object-contain"
+                        className="w-full text-foreground underline  underline-offset-[-16px] decoration-primary decoration-[3px] text-6xl object-contain"
                     >
                         <div className={'relative  h-12'}>
-                            <h3 className={'logo-text'}>Syed Adeeb</h3>
+                            <h3 className={'logo-text'}><span className={'text-primary font-extrabold'}>S</span>yed
+                                Adeeb</h3>
                         </div>
                     </Link>
                 </NavbarBrand>
