@@ -9,7 +9,7 @@ export default async function Home() {
     return (
         <>
             <section
-                className="border-b  border-white/10 sticky top-0 text-white z-[999]">
+                className="border-b border-black/10 dark:border-white/10 sticky top-0 text-black dark:text-white z-[999]">
                 <NavBar/>
             </section>
             <section id={"#hero"}>

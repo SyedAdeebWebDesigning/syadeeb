@@ -1,7 +1,7 @@
 "use client";
 
-import {useEffect, useState} from 'react';
 import {Switch} from "@nextui-org/react";
+import {useTheme} from "@nextui-org/use-theme";
 
 // Simple SunIcon component
 const SunIcon = (props: any) => (
@@ -41,20 +41,12 @@ const MoonIcon = (props: any) => (
 );
 
 export const ThemeSwitcher = () => {
-    const [theme, setTheme] = useState('light'); // Default theme
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
-
-    const handleChange = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark');
-    };
+    const {theme, setTheme} = useTheme()
 
     return (
         <Switch
             checked={theme === 'dark'}
-            onChange={() => handleChange}
+            onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             endContent={<MoonIcon/>}
             size="lg"
             startContent={<SunIcon/>}

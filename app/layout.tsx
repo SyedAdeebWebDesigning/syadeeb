@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {ClerkProvider} from '@clerk/nextjs'
 import {dark} from '@clerk/themes'
 import React from "react";
+import {Providers} from "@/app/providers";
 
 export const metadata: Metadata = {
     title: "Syed Adeeb",
@@ -25,13 +26,16 @@ export default function RootLayout({
             baseTheme: dark,
         }}>
 
-            <html lang="en" className={'scroll-smooth  bg-[#181818]'}>
+            <html lang="en" className={'scroll-smooth '}>
             <body
-                className={`text-[#fff] font-sans `}
+                className={`text-[#fff] font-sans bg-white dark:bg-[#181818]`}
             >
             <NextUIProvider>
-                <ToastContainer theme={'dark'}/>
-                <main className={''}>{children}</main>
+                <Providers>
+
+                    <ToastContainer theme={'dark'}/>
+                    <main className={''}>{children}</main>
+                </Providers>
             </NextUIProvider>
             </body>
             </html>
