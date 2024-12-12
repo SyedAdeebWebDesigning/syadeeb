@@ -3,6 +3,7 @@ import {LayoutDashboardIcon} from "lucide-react";
 import {currentUser} from "@clerk/nextjs/server";
 import {getUserByClerkId} from "@/lib/actions/user.action";
 
+
 const RedirectToDashboard = async () => {
     const user = await currentUser()
     if (!user) {

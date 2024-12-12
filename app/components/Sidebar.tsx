@@ -2,7 +2,7 @@ import Image from "next/image";
 import {Card, CardBody} from "@nextui-org/card";
 import {Link} from "@nextui-org/link";
 import React from "react";
-import {LogOutIcon} from "lucide-react";
+import SignOutButton from "@/app/components/SignOutButton";
 
 export interface SidebarProps {
     userFullname: string;
@@ -77,10 +77,7 @@ const Sidebar = ({
                     <div className="ml-4 flex flex-col">
                         <p className="text-lg font-medium">{userFullname}</p>
                         <p className="text-sm dark:text-gray-400 text-gray-600 -mt-1 mb-2">{userEmail}</p>
-                        <p className={'text-red-700 dark:text-red-300 text-sm cursor-pointer underline flex items-center'}>
-                            <LogOutIcon className={'text-xs mr-1'}/>
-                            Sign Out
-                        </p>
+                        <SignOutButton/>
                     </div>
                 </CardBody>
             </Card>

@@ -2,6 +2,8 @@ import Sidebar from "@/app/components/Sidebar";
 import React from "react";
 import {currentUser} from "@clerk/nextjs/server";
 import {ThemeSwitcher} from "@/app/components/ThemeSwitcher";
+import {getUserByClerkId} from "@/lib/actions/user.action";
+import {redirect} from 'next/navigation';
 
 
 type Props = {
@@ -11,7 +13,17 @@ type Props = {
 const Layout = async ({children}: Props) => {
     const user = await currentUser()
     if (!user) {
-        return <div>Loading...</div>
+        return redirect('/sign-in')
+    }
+
+    const dbUser = await getUserByClerkId(user.id);
+
+    if (!dbUser) {
+        return redirect('/sign-in')
+    }
+
+    if (!dbUser.isAdmin) {
+        redirect('/')
     }
     return (
         <main className="flex min-h-screen">
