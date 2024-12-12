@@ -18,13 +18,13 @@ const RedirectToDashboard = async () => {
     if (!dbUser.isAdmin) {
         return null
     }
-    
+
     return (
         <div
-            className={'cursor-pointer w-fit bg-neutral-300/50 text-black dark:text-white dark:bg-neutral-700/50 size-12 flex items-center justify-center rounded-xl'}>
+            className={'cursor-pointer w-fit bg-neutral-300/50 text-black dark:text-white dark:bg-neutral-700/50 backdrop-blur-3xl size-12 flex items-center justify-center rounded-xl'}>
             <Link href={'/dashboard'} className={'flex items-center px-4 py-4'}>
-                <LayoutDashboardIcon className={'mr-1'}/>
-                Dashboard
+                <LayoutDashboardIcon className={'md:mr-1'}/>
+                <span className={'hidden md:block'}>Dashboard</span>
             </Link>
         </div>
     );
