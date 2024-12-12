@@ -48,7 +48,7 @@ export default function App() {
     }, [menuItems]);
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen}>
+        <Navbar onMenuOpenChange={setIsMenuOpen} className={''}>
             {/* Navbar Content */}
             <NavbarContent>
                 <NavbarMenuToggle
@@ -59,9 +59,9 @@ export default function App() {
                     <Link
                         href={`/#`}
                         color={"foreground"}
-                        className="w-full text-foreground underline  underline-offset-[-16px] decoration-primary decoration-[3px] text-6xl object-contain"
+                        className="w-full text-foreground underline mt-2 md:mt-4 underline-offset-[-8px]  md:underline-offset-[-16px] decoration-primary decoration-[3px] text-5xl md:text-6xl object-contain"
                     >
-                        <div className={'relative  h-12'}>
+                        <div className={'relative  '}>
                             <h3 className={'logo-text'}><span className={'text-primary font-extrabold'}>S</span>yed
                                 Adeeb</h3>
                         </div>
@@ -70,7 +70,7 @@ export default function App() {
             </NavbarContent>
 
             {/* Navbar Items for larger screens */}
-            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+            <NavbarContent className="hidden md:flex gap-4 justify-center ">
                 {menuItems.map((item) => (
                     <NavbarItem key={item} isActive={activeItem === item}>
                         <Link
@@ -86,7 +86,7 @@ export default function App() {
             </NavbarContent>
 
             {/* Navbar Menu for smaller screens */}
-            <NavbarMenu>
+            <NavbarMenu className={'z-[999]'}>
                 {menuItems.map((item: string, index: number) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
@@ -97,7 +97,7 @@ export default function App() {
                                         ? "foreground"
                                         : "foreground"
                             }
-                            className="w-full"
+                            className="w-full text-neutral-700 dark:text-neutral-300 text-xl my-3"
                             href={`/#${item.toLowerCase()}`} // Anchor links
                             onClick={() => setActiveItem(item)} // Set active item on click
                         >

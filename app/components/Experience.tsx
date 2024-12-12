@@ -151,11 +151,11 @@ export function Experience() {
                                 whileInView={{scale: 1, opacity: 1}}
                                 transition={{delay: 0.1}}
                             >
-                                <h3 className="text-2xl font-semibold text-neutral-100 mb-2">
+                                <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
                                     {item.title}{" "}
                                     {item.link.length > 0 && formatLinks(item.link)}
                                 </h3>
-                                <p className="text-neutral-400 text-xs md:text-sm font-normal mb-4">
+                                <p className="text-neutral-700 dark:text-neutral-300 text-xs md:text-sm font-normal mb-4">
                                     {item.description}
                                 </p>
                                 <div className="grid grid-cols-2 gap-4">

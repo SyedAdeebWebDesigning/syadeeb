@@ -30,3 +30,31 @@ export const createUser = async (UserData: CreateUserProps) => {
         throw new Error("Failed to create user. Please try again.");
     }
 };
+
+export const getUserByClerkId = async (clerkId: string) => {
+    try {
+        // Fetching the user from the database
+        return await prisma.user.findUnique({
+            where: {
+                clerkId: clerkId,
+            },
+        });
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        throw new Error("Failed to fetch user. Please try again.");
+    }
+}
+
+export const deleteUserByClerkId = async (clerkId: string) => {
+    try {
+        // Deleting the user from the database
+        return await prisma.user.delete({
+            where: {
+                clerkId: clerkId,
+            },
+        });
+    } catch (error) {
+        console.error("Error deleting user:", error);
+        throw new Error("Failed to delete user. Please try again.");
+    }
+}

@@ -4,10 +4,16 @@ import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import {Experience} from "@/app/components/Experience";
 import Heading from "@/app/components/Heading";
 import {Projects} from "@/app/components/Projects";
+import RedirectToDashboard from "@/app/components/redirectToDashboard";
 
 export default async function Home() {
+
+
     return (
         <>
+            <div className={'fixed right-2 bottom-2'}>
+                <RedirectToDashboard/>
+            </div>
             <section
                 className="border-b border-black/10 dark:border-white/10 sticky top-0 text-black dark:text-white z-[999]">
                 <NavBar/>

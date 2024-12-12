@@ -1,7 +1,7 @@
 type Props = {};
 const Page = (props: Props) => {
     return (
-        <div className={'bg-background'}>Page</div>
+        <div className={'text-black dark:text-white'}>Page</div>
     );
 };
 export default Page;

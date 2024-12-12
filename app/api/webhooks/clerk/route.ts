@@ -1,4 +1,4 @@
-import {createUser, CreateUserProps} from "@/lib/actions/user.action";
+import {createUser, CreateUserProps, deleteUserByClerkId} from "@/lib/actions/user.action";
 import {Webhook} from "svix";
 import {headers} from "next/headers";
 import {clerkClient, WebhookEvent} from "@clerk/nextjs/server";
@@ -69,6 +69,19 @@ export async function POST(req: Request) {
         } catch (error: any) {
             return NextResponse.json(
                 {message: "Error creating user", error: error.message},
+                {status: 500}
+            );
+        }
+    }
+
+    if (evt.type === "user.deleted") {
+        const {id} = evt.data;
+
+        try {
+            await deleteUserByClerkId(id!);
+        } catch (error: any) {
+            return NextResponse.json(
+                {message: "Error deleting user", error: error.message},
                 {status: 500}
             );
         }

@@ -60,7 +60,7 @@ export function Projects() {
                         <motion.div
                             layoutId={`card-${active.title}-${id}`}
                             ref={ref}
-                            className="w-full max-w-[500px] h-fit flex flex-col bg-neutral-900 sm:rounded-3xl overflow-hidden"
+                            className="w-full max-w-[500px] h-fit flex flex-col bg-neutral-100 dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
                         >
                             <motion.div layoutId={`image-${active.title}-${id}`}>
                                 <Image
@@ -73,24 +73,24 @@ export function Projects() {
                                 />
                             </motion.div>
 
-                            <div className="bg-white/10">
+                            <div className="dark:bg-white/10 bg-black/10">
                                 <div className="flex justify-between items-start p-4 shadow shadow-amber-300">
                                     <div>
                                         <motion.h3
                                             layoutId={`title-${active.title}-${id}`}
-                                            className="font-boldtext-neutral-200"
+                                            className="font-bold text-neutral-800 dark:text-neutral-200"
                                         >
                                             {active.title}
                                         </motion.h3>
                                         <motion.p
                                             layoutId={`description-${active.description}-${id}`}
-                                            className="text-neutral-400 line-clamp-2"
+                                            className=" text-neutral-600 dark:text-neutral-400 line-clamp-2"
                                         >
                                             {active.description}
                                         </motion.p>
                                         <motion.p
                                             layoutId={`tech-${active.technologies.join(",")}-${id}`}
-                                            className="text-neutral-400 mt-2"
+                                            className="text-neutral-600 dark:text-neutral-400 mt-2"
                                         >
                                             <strong>Technologies Used:</strong> {active.technologies.join(", ")}
                                         </motion.p>
@@ -116,7 +116,7 @@ export function Projects() {
                         layoutId={`card-${project.title}-${id}`}
                         key={`card-${project.title}-${id}`}
                         onClick={() => setActive(project)}
-                        className="p-4 flex flex-col sm:items-center sm:gap-4 md:flex-row justify-between items-center hover:bg-neutral-800 rounded-xl cursor-pointer"
+                        className="p-4 flex flex-col sm:items-center sm:gap-4 md:flex-row justify-between items-center hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
                     >
                         <motion.div layoutId={`image-${project.title}-${id}`}>
                             <Image
@@ -130,13 +130,13 @@ export function Projects() {
                         <div className="text-center sm:w-full md:text-left">
                             <motion.h3
                                 layoutId={`title-${project.title}-${id}`}
-                                className="font-mediumtext-neutral-200"
+                                className="font-medium dark:text-neutral-200 text-neutral-800"
                             >
                                 {project.title}
                             </motion.h3>
                             <motion.p
                                 layoutId={`description-${project.description}-${id}`}
-                                className="text-neutral-400"
+                                className="dark:text-neutral-400 text-neutral-600"
                             >
                                 {project.description}
                             </motion.p>

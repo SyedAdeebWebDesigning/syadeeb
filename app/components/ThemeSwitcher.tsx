@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
 
     return (
         <div
-            className={'cursor-pointer bg-neutral-300/50 dark:bg-neutral-700/50 size-10 flex items-center justify-center rounded-xl'}>
+            className={'cursor-pointer bg-neutral-300/50 text-black dark:text-white dark:bg-neutral-700/50 size-10 flex items-center justify-center rounded-xl'}>
             {theme === 'light' ? (
                 <Moon onClick={() => setTheme('dark')}/>
             ) : (

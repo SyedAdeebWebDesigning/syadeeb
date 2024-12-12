@@ -2,6 +2,7 @@ import Image from "next/image";
 import {Card, CardBody} from "@nextui-org/card";
 import {Link} from "@nextui-org/link";
 import React from "react";
+import {LogOutIcon} from "lucide-react";
 
 export interface SidebarProps {
     userFullname: string;
@@ -23,25 +24,23 @@ const Sidebar = ({
     ];
 
     return (
-        <aside className="flex flex-col h-[99vh] fixed top-0  w-full text-white">
+        <aside className="flex flex-col h-[99vh] fixed top-0  w-full dark:text-white text-black">
             {/* Section 1: Logo and Links */}
             <div className="flex flex-col flex-grow p-6">
                 {/* Logo */}
-                <div className="mb-8 mt-4">
+                <div className="mb-8 mt-4 flex items-center">
                     <Link
                         href={`/#`}
                         color={"foreground"}
-                        className="w-full underline-offset-2 decoration-primary  text-foreground underline font-semibold text-3xl object-contain"
+                        className="w-full text-foreground underline  underline-offset-[-16px] decoration-primary decoration-[3px] text-6xl object-contain"
 
                     >
-                        <div className={'relative w-[200px] h-8'}>
-                            <Image
-                                src="/syedadeeb.png"
-                                alt="Syed Adeeb"
-                                fill
-                                className={'object-contain'}
-                                priority
-                            /></div>
+
+                        <div className={'relative  h-12'}>
+                            <h3 className={'logo-text'}><span className={'text-primary font-extrabold'}>S</span>yed
+                                Adeeb</h3>
+                        </div>
+
                     </Link>
                 </div>
 
@@ -51,30 +50,37 @@ const Sidebar = ({
                         <Link
                             key={index}
                             href={link.href}
-                            className="block text-lg text-neutral-200 hover:text-white transition-colors"
+                            className="block text-lg text-neutral-600 dark:text-neutral-200 hover:text-black dark:hover:text-white transition-colors"
                         >
                             {link.name}
                         </Link>
                     ))}
+
+
                 </nav>
             </div>
 
             {/* Section 2: User Card */}
-            <Card className="bg-neutral-800 w-full max-w-[18%] border-neutral-700">
+            <Card
+                className="bg-neutral-200 dark:bg-neutral-800 w-full max-w-[18%] border-neutral-300 dark:border-neutral-700">
                 <CardBody className="flex flex-row items-center p-4">
                     {/* User Photo */}
                     <Image
                         src="/owner.png" // Replace with dynamic path if needed
                         alt="User Photo"
-                        width={50}
-                        height={50}
+                        width={60}
+                        height={60}
                         className="rounded-full"
                     />
 
                     {/* User Info */}
                     <div className="ml-4 flex flex-col">
                         <p className="text-lg font-medium">{userFullname}</p>
-                        <p className="text-sm text-gray-400">{userEmail}</p>
+                        <p className="text-sm dark:text-gray-400 text-gray-600 -mt-1 mb-2">{userEmail}</p>
+                        <p className={'text-red-700 dark:text-red-300 text-sm cursor-pointer underline flex items-center'}>
+                            <LogOutIcon className={'text-xs mr-1'}/>
+                            Sign Out
+                        </p>
                     </div>
                 </CardBody>
             </Card>
