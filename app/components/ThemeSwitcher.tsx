@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
 
     return (
         <div
-            className={'w-[84px] h-12 p-1 rounded-full relative bg-neutral-200 text-black dark:text-white dark:bg-neutral-700'}
+            className={'w-[84px] h-12 p-1 rounded-full relative bg-neutral-200 text-black cursor-pointer dark:text-white dark:bg-neutral-700'}
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
             <motion.div
                 initial={false}
