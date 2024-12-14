@@ -5,8 +5,10 @@ import {Avatar, Link} from "@nextui-org/react";
 import {SocialIcon} from "react-social-icons";
 import {motion} from "framer-motion"
 import {BackgroundBeamsWithCollision} from "@/app/components/ui/background-beams-with-collision";
+import {useState} from "react";
 
 const HeroSection = () => {
+    const [imageUrl, setImageUrl] = useState('/owner.png')
     return (
         <section
             className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
@@ -14,11 +16,34 @@ const HeroSection = () => {
                 {/* Location and Image */}
                 <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8">
                     {/* Owner Image */}
-                    <motion.div initial={{x: -200, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{delay: 0.5}}
-                                className={'border-primary border-4 p-1 rounded-full'}>
+                    <motion.div
+
+                        transition={{
+                            delay: 1,
+                            type: "spring",
+                            stiffness: 120,
+                            damping: 12,
+                        }}
+                        whileHover={{
+                            rotate: 360, // Slight enlargement on hover
+
+                        }}
+                        className="border-primary border-4 p-1 rounded-full cursor-pointer "
+                        onMouseEnter={() => {
+                            setTimeout(() => {
+                                setImageUrl('/ai.jpg');
+                            }, 1000)
+
+                        }}
+                        onMouseLeave={() => {
+                            setTimeout(() => {
+                                setImageUrl('/owner.png');
+                            }, 1000)
+                        }}
+                    >
                         <Avatar
-                            src="/owner.png"
-                            className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] "
+                            src={imageUrl}
+                            className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px]"
                             alt="Syed Adeeb"
                         />
                     </motion.div>
