@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e12b06ab-b47a-4eed-b401-4912908db021" name="Changes" comment="" />
+    <list default="true" id="e12b06ab-b47a-4eed-b401-4912908db021" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/components/Contact.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Skills.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/card-hover-effect.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(dashboard)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Experience.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/MaxWidthWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/MaxWidthWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Projects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/SMOG - PAGE 0.1 (12 files merged).ppt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -74,6 +89,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(dashboard)" />
       <recent name="$PROJECT_DIR$/app/fonts" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/(auth)/register" />
@@ -98,6 +114,8 @@
       <workItem from="1732216410847" duration="1254000" />
       <workItem from="1732217672376" duration="8024000" />
       <workItem from="1732226149542" duration="86627000" />
+      <workItem from="1733995789003" duration="22363000" />
+      <workItem from="1734273105894" duration="11356000" />
     </task>
     <servers />
   </component>

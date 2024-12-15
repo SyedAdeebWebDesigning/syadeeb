@@ -47,15 +47,15 @@ export default function RootLayout({
             },
         }}>
 
-            <html lang="en" className={'scroll-smooth '}>
+            <html lang="en" className={'scroll-smooth'}>
             <body
-                className={`text-[#fff] font-sans bg-white dark:bg-[#181818]`}
+                className={`text-[#fff] font-sans bg-[#ebebeb] dark:bg-[#181818]`}
             >
             <NextUIProvider>
                 <Providers>
 
                     <ToastContainer theme={'dark'}/>
-                    <main className={''}>{children}</main>
+                    <main className={'bg-[#ebebeb] dark:bg-[#181818]'}>{children}</main>
                 </Providers>
             </NextUIProvider>
             </body>

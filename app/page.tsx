@@ -5,6 +5,8 @@ import {Experience} from "@/app/components/Experience";
 import Heading from "@/app/components/Heading";
 import {Projects} from "@/app/components/Projects";
 import RedirectToDashboard from "@/app/components/redirectToDashboard";
+import Skills from "@/app/components/Skills";
+import Contact from "@/app/components/Contact";
 
 export default async function Home() {
 
@@ -44,15 +46,15 @@ export default async function Home() {
                     <div>
                         <Heading text={'Skills'} id={'Skills'}/>
                     </div>
-                    {/* Add Skills Content */}
+                    <Skills/>
                 </MaxWidthWrapper>
             </section>
-            <section id="contact">
+            <section id="contact" className={'py-10'}>
                 <MaxWidthWrapper>
                     <div>
                         <Heading text={'Contact'} id={'Contact'}/>
                     </div>
-                    {/* Add Contact Content */}
+                    <Contact/>
                 </MaxWidthWrapper>
             </section>
         </>

@@ -1,8 +1,8 @@
-import React, {FC, PropsWithChildren} from "react";
+import React from "react";
 
-const MaxWidthWrapper: FC<PropsWithChildren> = ({children}) => {
+const MaxWidthWrapper = ({children, size}: { children: React.ReactNode, size?: string }) => {
     return (
-        <div className="max-w-screen-lg mx-auto px-4">
+        <div className={`max-w-screen-lg mx-auto px-4`}>
             {children}
         </div>
     );
