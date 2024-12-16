@@ -57,7 +57,7 @@ export default function App() {
                 />
                 <NavbarBrand className={'backdrop-blur'}>
                     <Link
-                        href={`/#`}
+                        href={`/`}
                         color={"foreground"}
                         className="w-full text-foreground underline mt-2 md:mt-4 underline-offset-[-8px]  md:underline-offset-[-16px] decoration-primary decoration-[3px] text-5xl md:text-6xl object-contain"
                     >

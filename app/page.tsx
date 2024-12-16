@@ -49,7 +49,7 @@ export default async function Home() {
                     <Skills/>
                 </MaxWidthWrapper>
             </section>
-            <section id="contact" className={'py-10'}>
+            <section id="contact" className={'pb-10'}>
                 <MaxWidthWrapper>
                     <div>
                         <Heading text={'Contact'} id={'Contact'}/>

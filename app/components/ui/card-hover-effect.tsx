@@ -13,6 +13,7 @@ export const HoverEffect = ({
         title: string;
         description: string;
         image: string
+        backgroundColor?: string
     }[];
     className?: string;
 }) => {
@@ -52,7 +53,10 @@ export const HoverEffect = ({
                     <Card>
                         <div className={'flex items-center'}>
                             <div
-                                className={'pr-2 relative size-[50px] object-cover bg-neutral-200 dark:bg-neutral-700 rounded-lg'}>
+                                className={`pr-2 relative size-[50px] object-cover ${!item.backgroundColor && ('bg-neutral-200 dark:bg-neutral-700')}  rounded-lg`}
+                                style={{
+                                    backgroundColor: item.backgroundColor
+                                }}>
                                 <Image
                                     src={item.image}
                                     alt={'image'}
@@ -82,7 +86,7 @@ export const Card = ({
     return (
         <div
             className={cn(
-                "rounded-2xl h-full w-full  overflow-hidden bg-neutral-100 dark:bg-neutral-800 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+                "rounded-2xl h-full w-full  overflow-hidden bg-neutral-100 dark:bg-neutral-800  relative z-20",
                 className
             )}
         >
@@ -115,7 +119,7 @@ export const CardDescription = ({
     return (
         <p
             className={cn(
-                " text-zinc-400 tracking-wide leading-relaxed text-sm line-clamp-2",
+                "dark:text-neutral-400 text-neutral-600 tracking-wide leading-relaxed text-sm line-clamp-2",
                 className
             )}
         >

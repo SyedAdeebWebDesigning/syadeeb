@@ -1,3 +1,5 @@
+"use client"
+
 import React, {useRef, useState} from "react";
 import {motion} from "framer-motion";
 import {IconUpload} from "@tabler/icons-react";
@@ -61,7 +63,7 @@ export const FileUpload = ({
                         {file ? (
                             <motion.div
                                 key={"file"}
-                                className="relative overflow-hidden z-40 bg-neutral-800 flex flex-col items-start justify-start md:h-24 p-4 mt-4 w-full mx-auto rounded-md shadow-sm"
+                                className="relative overflow-hidden z-40 bg-neutral-200 dark:bg-neutral-800 flex flex-col items-start justify-start md:h-24 p-4 mt-4 w-full mx-auto rounded-md shadow-sm"
                             >
                                 <div className="flex justify-between w-full items-center gap-4">
                                     <motion.p

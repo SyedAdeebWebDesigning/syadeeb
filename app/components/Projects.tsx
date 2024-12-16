@@ -139,7 +139,7 @@ export function Projects() {
                                 layoutId={`title-${project.title}-${id}`}
                                 className="font-medium dark:text-neutral-200 text-neutral-800"
                             >
-                                {project.title}
+                                {index + 1}. {project.title}
                             </motion.h3>
                             <motion.p
                                 layoutId={`description-${project.description}-${id}`}
