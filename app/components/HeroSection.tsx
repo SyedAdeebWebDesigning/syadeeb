@@ -8,7 +8,7 @@ import {BackgroundBeamsWithCollision} from "@/app/components/ui/background-beams
 import {useState} from "react";
 
 const HeroSection = () => {
-    const [imageUrl, setImageUrl] = useState('/owner.png')
+    const [imageUrl, setImageUrl] = useState('/owner.webp')
     return (
         <section
             className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
@@ -37,7 +37,7 @@ const HeroSection = () => {
                         }}
                         onMouseLeave={() => {
                             setTimeout(() => {
-                                setImageUrl('/owner.png');
+                                setImageUrl('/owner.webp');
                             }, 1000)
                         }}
                     >
