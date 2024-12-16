@@ -192,7 +192,7 @@ const projects = [
     {
         description: "A music streaming app for discovering new songs.",
         title: "MusicStream",
-        image: "/assets/FT1.png",
+        image: "/assets/FT1.webp",
         ctaText: "View",
         ctaLink: "https://example.com/music-stream",
         technologies: ["React", "Node.js", "MongoDB"],
@@ -200,7 +200,7 @@ const projects = [
     {
         description: "A social networking platform for professionals.",
         title: "LinkedIn Clone",
-        image: "/assets/FT2.png",
+        image: "/assets/FT2.webp",
         ctaText: "View",
         ctaLink: "https://example.com/linkedin-clone",
         technologies: ["React", "Firebase", "Express"],
@@ -208,7 +208,7 @@ const projects = [
     {
         description: "An e-commerce platform for buying and selling products.",
         title: "ShopX",
-        image: "/assets/FT3.png",
+        image: "/assets/FT3.webp",
         ctaText: "View",
         ctaLink: "https://example.com/shopx",
         technologies: ["Vue", "Node.js", "MongoDB"],
@@ -216,7 +216,7 @@ const projects = [
     {
         description: "A personal blog platform for writing and sharing content.",
         title: "BlogHub",
-        image: "/assets/FT4.png",
+        image: "/assets/FT4.webp",
         ctaText: "View",
         ctaLink: "https://example.com/bloghub",
         technologies: ["Next.js", "GraphQL", "Prisma"],
@@ -224,7 +224,7 @@ const projects = [
     {
         description: "A project management tool for teams.",
         title: "TaskMaster",
-        image: "/assets/O1.png",
+        image: "/assets/O1.webp",
         ctaText: "View",
         ctaLink: "https://example.com/taskmaster",
         technologies: ["React", "Redux", "Firebase"],
