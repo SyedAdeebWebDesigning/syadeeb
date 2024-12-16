@@ -6,7 +6,6 @@ import {
     Navbar,
     NavbarBrand,
     NavbarContent,
-    NavbarItem,
     NavbarMenu,
     NavbarMenuItem,
     NavbarMenuToggle,
@@ -50,29 +49,29 @@ export default function App() {
     return (
         <Navbar onMenuOpenChange={setIsMenuOpen} className={''}>
             {/* Navbar Content */}
-            <NavbarContent>
-                <NavbarMenuToggle
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className="sm:hidden"
-                />
-                <NavbarBrand className={'backdrop-blur'}>
-                    <Link
-                        href={`/`}
-                        color={"foreground"}
-                        className="w-full text-foreground underline mt-2 md:mt-4 underline-offset-[-8px]  md:underline-offset-[-16px] decoration-primary decoration-[3px] text-5xl md:text-6xl object-contain"
-                    >
-                        <div className={'relative  '}>
-                            <h3 className={'logo-text'}><span className={'text-primary font-extrabold'}>S</span>yed
-                                Adeeb</h3>
-                        </div>
-                    </Link>
-                </NavbarBrand>
-            </NavbarContent>
+
+            <NavbarMenuToggle
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                className="sm:hidden"
+            />
+            <NavbarBrand className={'backdrop-blur'}>
+                <Link
+                    href={`/`}
+                    color={"foreground"}
+                    className="w-full text-foreground underline mt-2 md:mt-4 underline-offset-[-8px]  md:underline-offset-[-16px] decoration-primary decoration-[3px] text-5xl md:text-6xl object-contain"
+                >
+                    <div className={'relative'}>
+                        <h3 className={'logo-text'}><span className={'text-primary font-extrabold'}>S</span>yed
+                            Adeeb</h3>
+                    </div>
+                </Link>
+            </NavbarBrand>
+
 
             {/* Navbar Items for larger screens */}
             <NavbarContent className="hidden md:flex gap-4 justify-center ">
                 {menuItems.map((item) => (
-                    <NavbarItem key={item} isActive={activeItem === item}>
+                    <NavbarMenuItem key={item} isActive={activeItem === item}>
                         <Link
                             href={`/#${item.toLowerCase()}`} // Anchor links
                             className={`px-4 py-2 rounded-xl ${activeItem === item ? "bg-primary/10" : ""} font-semibold text-lg`}
@@ -81,7 +80,7 @@ export default function App() {
                         >
                             {item}
                         </Link>
-                    </NavbarItem>
+                    </NavbarMenuItem>
                 ))}
             </NavbarContent>
 
