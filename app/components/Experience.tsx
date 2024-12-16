@@ -17,10 +17,10 @@ export function Experience() {
             ],
             description: "Developed a fullstack application for PadSeva, a NGO based in India.",
             images: [
-                "/assets/PSe1.png",
-                "/assets/PSe2.png",
-                "/assets/PSe3.png",
-                "/assets/PSe4.png",
+                "/assets/PSe1.webp",
+                "/assets/PSe2.webp",
+                "/assets/PSe3.webp",
+                "/assets/PSe4.webp",
 
             ],
         },
@@ -33,10 +33,10 @@ export function Experience() {
             ],
             description: "Developed two major personal E-Commerce projects.",
             images: [
-                "/assets/GG1.png",
-                "/assets/P1.png",
-                "/assets/P2.png",
-                "/assets/GG2.png",
+                "/assets/GG1.webp",
+                "/assets/P1.webp",
+                "/assets/P2.webp",
+                "/assets/GG2.webp",
             ],
         },
         {
@@ -45,10 +45,10 @@ export function Experience() {
             link: [],
             description: "Worked as a Full Stack Trainee, created multiple personal projects.",
             images: [
-                "/assets/FT1.png",
-                "/assets/FT2.png",
-                "/assets/FT3.png",
-                "/assets/FT4.png",
+                "/assets/FT1.webp",
+                "/assets/FT2.webp",
+                "/assets/FT3.webp",
+                "/assets/FT4.webp",
             ],
         },
         {
@@ -57,9 +57,9 @@ export function Experience() {
             link: [],
             description: "Started learning web designing and created multiple projects.",
             images: [
-                "/assets/O1.png",
-                "/assets/O2.png",
-                "/assets/O3.png",
+                "/assets/O1.webp",
+                "/assets/O2.webp",
+                "/assets/O3.webp",
             ],
         },
     ];
