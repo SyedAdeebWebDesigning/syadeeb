@@ -40,8 +40,7 @@ const Contact = () => {
 
                 />
                 <Button
-                    className="col-span-12 md:col-span-6 mt-4 text-white w-full"
-                    color="primary"
+                    className="col-span-12 md:col-span-6 mt-4 text-white w-full dark:bg-[#00C774] bg-[#04533B]"
                     variant={'solid'}
                     size={'lg'}
                     type="submit"
