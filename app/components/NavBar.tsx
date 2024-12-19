@@ -47,7 +47,9 @@ export default function App() {
             <NavbarMenuToggle
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 className="sm:hidden"
-                onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle menu open/close
+                onClick={() => {
+                    setIsMenuOpen((prev) => !prev);
+                }} // Toggle menu open/close
             />
             <NavbarBrand className={'backdrop-blur'}>
                 <Link
