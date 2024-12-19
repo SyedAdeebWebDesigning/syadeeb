@@ -7,7 +7,7 @@ import Link from "next/link";
 const Contact = () => {
     return (
         <div>
-            <div className="flex flex-col w-fit mx-auto gap-y-2 mb-10 -mt-10">
+            <div className="flex flex-col w-fit mx-auto gap-y-2 mb-10 sm:-mt-10">
                 <Link href={'mailto:syedadeebwork@gmail.com'}
                       className={'flex space-x-2 items-center text-neutral-800 dark:text-neutral-200'}>
                     <Mail className={'text-primary'}/>
