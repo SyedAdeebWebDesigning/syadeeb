@@ -26,11 +26,12 @@ model user {
 }
 
 model Experience {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  date        DateTime
-  title       String
-  arrayLinks  Link[] // Optional array of links
-  arrayImages Image[] // Requires between 1 and 4 images (programmatically enforced)
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  date      String
+  title     String
+  shortDesc String
+  links     Link[] // Relation field
+  images    Image[] // Relation field
 }
 
 model Link {
