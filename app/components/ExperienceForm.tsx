@@ -126,6 +126,7 @@ const ExperienceForm = () => {
                         value={formData.date}
                         onChange={(e) => handleInputChange(e, "date")}
                         className="contact-input bg-neutral-100 dark:bg-neutral-800 rounded-xl"
+                        color={'default'}
                         variant="bordered"
                     />
                     <Input
@@ -134,6 +135,7 @@ const ExperienceForm = () => {
                         value={formData.title}
                         onChange={(e) => handleInputChange(e, "title")}
                         className="contact-input bg-neutral-100 dark:bg-neutral-800 rounded-xl"
+                        color={'default'}
                         variant="bordered"
                     />
                 </div>
@@ -143,6 +145,7 @@ const ExperienceForm = () => {
                     className="col-span-12 md:col-span-6 mb-6 md:mb-0 mt-4 contact-input bg-neutral-100 dark:bg-neutral-800 rounded-xl"
                     label="Short Description"
                     labelPlacement="inside"
+                    color={'default'}
                     minRows={2}
                     value={formData.shortDesc}
                     onChange={(e) => handleInputChange(e, "shortDesc")}
@@ -151,7 +154,8 @@ const ExperienceForm = () => {
 
                 {/* Links Fields */}
                 <div className="w-full space-y-2">
-                    <label className="block font-semibold">Links (Optional)</label>
+                    <label className="block font-semibold text-neutral-800 dark:text-neutral-200">Links
+                        (Optional)</label>
                     {formData.links.map((link, index) => (
                         <div key={index} className="flex gap-2">
                             <Input
@@ -159,17 +163,19 @@ const ExperienceForm = () => {
                                 name="title"
                                 type="text"
                                 value={link.title}
+                                color={'default'}
                                 onChange={(e) => handleInputChange(e, "links", index)}
-                                className="w-1/2 bg-neutral-100 dark:bg-neutral-800 rounded-xl"
+                                className="w-1/2 bg-neutral-100 dark:bg-neutral-800 rounded-xl contact-input"
                                 variant="bordered"
                             />
                             <Input
                                 label="Link URL"
                                 name="url"
                                 type="text"
+                                color={'default'}
                                 value={link.url}
                                 onChange={(e) => handleInputChange(e, "links", index)}
-                                className="w-1/2 bg-neutral-100 dark:bg-neutral-800 rounded-xl"
+                                className="w-1/2 bg-neutral-100 dark:bg-neutral-800 rounded-xl contact-input"
                                 variant="bordered"
                             />
                         </div>
@@ -181,11 +187,16 @@ const ExperienceForm = () => {
 
                 {/* Images Fields */}
                 <div className="w-full space-y-2">
-                    <label className="block font-semibold">Images (1-4 Required)</label>
-                    <input
+                    <label className="block font-semibold text-neutral-800 dark:text-neutral-200">Images (1-4
+                        Required)</label>
+                    <Input
                         type="file"
                         accept="image/*"
                         multiple
+                        size={'lg'}
+                        color={'default'}
+                        className={'contact-input bg-neutral-100 dark:bg-neutral-800 rounded-xl'}
+                        variant={'bordered'}
                         onChange={(e) => handleFileUpload(Array.from(e.target.files || []))}
                         disabled={formData.images.length >= 4}
                     />
@@ -202,8 +213,9 @@ const ExperienceForm = () => {
                     </div>
                     <Button
                         type="button"
-                        variant="ghost"
-                        onClick={addLinkField}
+                        variant="solid"
+                        color={'default'}
+                        className={'hidden'}
                         disabled={formData.images.length >= 4}
                     >
                         Add Image
