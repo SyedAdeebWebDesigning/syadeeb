@@ -7,10 +7,12 @@ import {Projects} from "@/app/components/Projects";
 import RedirectToDashboard from "@/app/components/redirectToDashboard";
 import Skills from "@/app/components/Skills";
 import Contact from "@/app/components/Contact";
+import {getExperiences} from "@/lib/actions/experience.action";
 
 export default async function Home() {
 
-
+    const data = await getExperiences()
+    const experience = JSON.parse(JSON.stringify(data))
     return (
         <>
             <div className={'fixed right-2 bottom-2 z-[999]'}>
@@ -30,7 +32,7 @@ export default async function Home() {
                     <div className={''}>
                         <Heading text={'Experience'} id={'Experience'}/>
                     </div>
-                    <Experience/>
+                    <Experience timeline={experience}/>
                 </MaxWidthWrapper>
             </section>
             <section id="projects">

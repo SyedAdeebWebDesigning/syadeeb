@@ -3,6 +3,8 @@ import {getExperiences} from "@/lib/actions/experience.action";
 import {Experience} from "@prisma/client";
 import Link from "next/link";
 import {Button} from "@nextui-org/button";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import ExperienceTable from "@/app/components/ExperienceTable";
 
 const Page = async () => {
     const data = await getExperiences()
@@ -20,7 +22,19 @@ const Page = async () => {
         )
     }
     return (
-        <div>Page</div>
+        <div>
+            <MaxWidthWrapper>
+                <div>
+                    <h3 className={'text-2xl text-black dark:text-white'}>Experience</h3>
+
+                    <ExperienceTable experience={experience}/>
+                    <Link href={'/experience/new'} className={''}>
+                        <Button color={'primary'} size={'md'} className={'mt-2'}>Create
+                            New Experience</Button>
+                    </Link>
+                </div>
+            </MaxWidthWrapper>
+        </div>
     )
 }
 export default Page

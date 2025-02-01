@@ -21,7 +21,7 @@ interface ExperienceFormData {
     images: string[]; // Store Base64 image strings here
 }
 
-const ExperienceForm = () => {
+const ExperienceForm = ({type}: { type: "create" | "update" }) => {
     const [formData, setFormData] = useState<ExperienceFormData>({
         date: "",
         title: "",
