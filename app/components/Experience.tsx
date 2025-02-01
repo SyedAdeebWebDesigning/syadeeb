@@ -82,7 +82,7 @@ export function Experience({timeline}: { timeline: any }) {
                             date: string;
                             title: string;
                             links?: { title: string; url: string }[];
-                            description: string;
+                            shortDesc: string;
                             images: string[];
                         },
                         index: number
