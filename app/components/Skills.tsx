@@ -1,6 +1,12 @@
 import {HoverEffect} from "./ui/card-hover-effect";
+import {getSkills} from "@/lib/actions/skills.action";
+import {Technology} from "@prisma/client";
 
-export default function Skills() {
+export default async function Skills() {
+
+    const data = await getSkills();
+    const skills = JSON.parse(JSON.stringify(data)) as Technology[]
+
     return (
         <div className="max-w-5xl mx-auto px-8">
             <HoverEffect items={skills}/>

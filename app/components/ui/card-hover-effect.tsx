@@ -10,8 +10,8 @@ export const HoverEffect = ({
                                 className,
                             }: {
     items: {
-        title: string;
-        description: string;
+        name: string;
+        shortDescription: string;
         image: string
         backgroundColor?: string
     }[];
@@ -65,8 +65,8 @@ export const HoverEffect = ({
                                 />
                             </div>
                             <div className={'ml-2'}>
-                                <CardTitle>{item.title}</CardTitle>
-                                <CardDescription>{item.description}</CardDescription>
+                                <CardTitle>{item.name}</CardTitle>
+                                <CardDescription>{item.shortDescription}</CardDescription>
                             </div>
                         </div>
                     </Card>
