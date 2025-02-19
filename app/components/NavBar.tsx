@@ -15,8 +15,13 @@ import {ThemeSwitcher} from "@/app/components/ThemeSwitcher";
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Menu items
-    const menuItems: string[] = ["Experience", "Projects", "Skills", "Contact"];
+    // Menu items (Now includes "About")
+    const menuItems: { label: string; href: string }[] = [
+        {label: "Experience", href: "#experience"},
+        {label: "Projects", href: "#projects"},
+        {label: "Skills", href: "#skills"},
+        {label: "Contact", href: "#contact"},
+    ];
 
     // State to track the active menu item
     const [activeItem, setActiveItem] = useState<string | null>(null);
@@ -26,10 +31,10 @@ export default function App() {
         const handleHashChange = () => {
             const currentHash = window.location.hash.replace("#", "");
             const matchedItem = menuItems.find(
-                (item) => item.toLowerCase() === currentHash.toLowerCase()
+                (item) => item.href.replace("/#", "") === currentHash
             );
             if (matchedItem) {
-                setActiveItem(matchedItem);
+                setActiveItem(matchedItem.label);
             }
         };
 
@@ -47,9 +52,7 @@ export default function App() {
             <NavbarMenuToggle
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 className="sm:hidden"
-                onClick={() => {
-                    setIsMenuOpen((prev) => !prev);
-                }} // Toggle menu open/close
+                onClick={() => setIsMenuOpen((prev) => !prev)}
             />
             <NavbarBrand className={'backdrop-blur'}>
                 <Link
@@ -68,14 +71,14 @@ export default function App() {
             {/* Navbar Items for larger screens */}
             <NavbarContent className="hidden md:flex gap-4 justify-center ">
                 {menuItems.map((item) => (
-                    <NavbarMenuItem key={item} isActive={activeItem === item}>
+                    <NavbarMenuItem key={item.label} isActive={activeItem === item.label}>
                         <Link
-                            href={`/#${item.toLowerCase()}`}
-                            className={`px-4 py-2 rounded-xl ${activeItem === item ? "bg-primary/10" : ""} font-semibold text-lg`}
-                            color={activeItem === item ? "primary" : "foreground"}
-                            onClick={() => setActiveItem(item)}
+                            href={item.href}
+                            className={`px-4 py-2 rounded-xl ${activeItem === item.label ? "bg-primary/10" : ""} font-semibold text-lg`}
+                            color={activeItem === item.label ? "primary" : "foreground"}
+                            onClick={() => setActiveItem(item.label)}
                         >
-                            {item}
+                            {item.label}
                         </Link>
                     </NavbarMenuItem>
                 ))}
@@ -84,24 +87,18 @@ export default function App() {
             {/* Navbar Menu for smaller screens */}
             {isMenuOpen && (
                 <NavbarMenu className={`z-[999] sm:hidden`}>
-                    {menuItems.map((item: string, index: number) => (
-                        <NavbarMenuItem key={`${item}-${index}`}>
+                    {menuItems.map((item, index) => (
+                        <NavbarMenuItem key={`${item.label}-${index}`}>
                             <Link
-                                color={
-                                    activeItem === item
-                                        ? "primary"
-                                        : index === menuItems.length - 1
-                                            ? "foreground"
-                                            : "foreground"
-                                }
+                                color={activeItem === item.label ? "primary" : "foreground"}
                                 className="w-full text-neutral-700 dark:text-neutral-300 text-xl my-3"
-                                href={`/#${item.toLowerCase()}`}
+                                href={item.href}
                                 onClick={() => {
-                                    setActiveItem(item);
-                                    setIsMenuOpen(false); // Properly close the menu
+                                    setActiveItem(item.label);
+                                    setIsMenuOpen(false); // Close menu after clicking
                                 }}
                             >
-                                {item}
+                                {item.label}
                             </Link>
                         </NavbarMenuItem>
                     ))}
