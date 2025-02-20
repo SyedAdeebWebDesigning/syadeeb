@@ -8,11 +8,15 @@ import RedirectToDashboard from "@/app/components/redirectToDashboard";
 import Skills from "@/app/components/Skills";
 import Contact from "@/app/components/Contact";
 import {getExperiences} from "@/lib/actions/experience.action";
+import { getProjects } from "@/lib/actions/projects.action";
 
 export default async function Home() {
 
     const data = await getExperiences()
     const experience = JSON.parse(JSON.stringify(data))
+
+    const projectData = await getProjects();
+    const projects = JSON.parse(JSON.stringify(projectData));
     return (
         <>
             <div className={'fixed right-2 bottom-2 z-[999]'}>
@@ -40,7 +44,7 @@ export default async function Home() {
                     <div>
                         <Heading text={'Projects'} id={'Projects'}/>
                     </div>
-                    <Projects/>
+                    <Projects projects={projects}/>
                 </MaxWidthWrapper>
             </section>
             <section id="skills">

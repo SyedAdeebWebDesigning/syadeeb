@@ -8,15 +8,15 @@ import {
 	TableHeader,
 	TableRow,
 } from "@heroui/table";
-import { Technology } from "@prisma/client";
+import { Project } from "@prisma/client";
 import React from "react";
 import Image from "next/image";
 import { Link } from "@nextui-org/react";
 
-const SkillTable = ({ skill = [] }: { skill?: Technology[] }) => {
+const ProjectTable = ({ project = [] }: { project?: Project[] }) => {
 	return (
 		<Table
-			aria-label="Skill Table"
+			aria-label="project Table"
 			className="text-slate-800 dark:text-neutral-200 mt-10">
 			<TableHeader>
 				<TableColumn>S.No</TableColumn>
@@ -24,32 +24,35 @@ const SkillTable = ({ skill = [] }: { skill?: Technology[] }) => {
 				<TableColumn>Desc</TableColumn>
 			</TableHeader>
 			<TableBody
-				items={skill.map((skill, index) => ({ ...skill, index: index + 1 }))}>
-				{(skill: Technology & { index: number }) => (
-					<TableRow key={skill.id}>
-						<TableCell>{skill.index}.</TableCell>
+				items={project.map((project, index) => ({
+					...project,
+					index: index + 1,
+				}))}>
+				{(project: Project & { index: number }) => (
+					<TableRow key={project.id}>
+						<TableCell>{project.index}. </TableCell>
 						<TableCell>
 							<Link
-								href={`/skills/${skill.id}`}
+								href={`/projects/${project.id}`}
 								className={"flex items-center justify-start"}>
-								<div
-									style={{ backgroundColor: skill.backgroundColor }}
-									className={"rounded-md"}>
+								<div className={"rounded-md"}>
 									<Image
 										width={50}
 										height={50}
 										className={"p-2 "}
 										objectFit={"contain"}
-										src={skill.image}
-										alt={skill.name}
+										src={project.image}
+										alt={project.title}
 									/>
 								</div>
 								<h3 className={"ml-2 dark:text-white text-black"}>
-									{skill.name}
+									{project.title}
 								</h3>
 							</Link>
 						</TableCell>
-						<TableCell>{skill.shortDescription}</TableCell>
+						<TableCell className="line-clamp-2">
+							{project.description}
+						</TableCell>
 					</TableRow>
 				)}
 			</TableBody>
@@ -57,4 +60,4 @@ const SkillTable = ({ skill = [] }: { skill?: Technology[] }) => {
 	);
 };
 
-export default SkillTable;
+export default ProjectTable;

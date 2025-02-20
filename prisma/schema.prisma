@@ -50,21 +50,19 @@ model Image {
 }
 
 model Project {
-  id                String       @id @default(auto()) @map("_id") @db.ObjectId
-  title             String
-  description       String
-  image             String
-  ctaText           String
-  ctaLink           String
-  arrayTechnologies Technology[] // References multiple technologies
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  description  String
+  image        String
+  ctaText      String
+  ctaLink      String
+  technologies String[] // References multiple technologies
 }
 
 model Technology {
-  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
   name             String
   shortDescription String
   image            String
   backgroundColor  String // Added missing field for background color
-  projectId        String?  @db.ObjectId // References Project
-  project          Project? @relation(fields: [projectId], references: [id])
 }
