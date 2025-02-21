@@ -21,13 +21,13 @@ import Image from "next/image";
 interface ProjectFormProps {
 	type: "create" | "update";
 	skills: Technology[];
-	project?: Project;
+	project?: Project & { technologies: string[] };
 }
 
 const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 	const router = useRouter();
 
-	// ✅ State to handle form fields
+	// ✅ State for form fields
 	const [title, setTitle] = useState(project?.title || "");
 	const [description, setDescription] = useState(project?.description || "");
 	const [ctaText, setCtaText] = useState(project?.ctaText || "");
@@ -37,12 +37,14 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	// ✅ Load selected technologies if updating an existing project
+	// ✅ Ensure technologies are pre-selected for update mode
 	useEffect(() => {
 		if (type === "update" && project?.technologies) {
-			setArrayTechnologies(project.technologies as string[]);
+			setArrayTechnologies([...project.technologies]); // ✅ Ensuring state updates properly
 		}
 	}, [type, project]);
+
+	console.log(arrayTechnologies);
 
 	// ✅ Convert image file to Base64 string
 	const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +58,7 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 		}
 	};
 
-	// ✅ Handle form submission for both create & update
+	// ✅ Handle form submission
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		setIsLoading(true);
@@ -68,22 +70,23 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 				image: image || "", // Ensure image is not null
 				ctaText,
 				ctaLink,
-				technologies: arrayTechnologies, // Store selected technology names
+				technologies: arrayTechnologies, // ✅ Store selected technology IDs
 			};
+
+			console.log("Submitted Data:", projectData);
 
 			if (type === "create") {
 				await addProjects(projectData);
+				// Reset form
+				setTitle("");
+				setDescription("");
+				setCtaText("");
+				setCtaLink("");
+				setArrayTechnologies([]);
+				setImage(null);
 			} else if (type === "update" && project?.id) {
 				await updateProject(projectData, project.id);
 			}
-
-			// Reset form
-			setTitle("");
-			setDescription("");
-			setCtaText("");
-			setCtaLink("");
-			setArrayTechnologies([]);
-			setImage(null);
 
 			// Redirect to projects page
 			router.push("/projects");
@@ -154,12 +157,11 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 						<ModalBody>
 							<CheckboxGroup
 								label="Technologies"
-								value={arrayTechnologies}
-								onChange={(selectedValues) =>
-									setArrayTechnologies(selectedValues)
-								}>
+								value={arrayTechnologies} // Ensure it is controlled
+								onValueChange={setArrayTechnologies} // Updates state correctly
+							>
 								{skills.map((skill) => (
-									<Checkbox key={skill.id} value={skill.name}>
+									<Checkbox key={skill.id} value={skill.id}>
 										<div className="flex items-center">
 											<div
 												style={{ backgroundColor: skill.backgroundColor }}
@@ -168,6 +170,7 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 													src={skill.image}
 													width={20}
 													height={20}
+													className="object-contain aspect-square"
 													alt={skill.name}
 												/>
 											</div>
@@ -198,7 +201,7 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 					color="default"
 					variant="bordered"
 					className="bg-neutral-100 dark:bg-neutral-800 rounded-xl text-black dark:text-white"
-					required
+					required={type === "create"}
 				/>
 				{image && (
 					<img src={image} alt="Selected" className="w-32 h-32 object-cover" />

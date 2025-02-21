@@ -94,18 +94,18 @@ export const updateProject = async (
 	projectId: string
 ) => {
 	try {
-		const { title, description, image, ctaText, ctaLink, technologies } =
-			project;
+		const {
+			title,
+			description,
+			image,
+			ctaText,
+			ctaLink,
+			technologies = [],
+		} = project;
 
-		// Fetch technology IDs based on names
-		const existingTechnologies = await prisma.technology.findMany({
-			where: { name: { in: technologies } },
-		});
+		// ✅ Extract only technology IDs
+		const technologyIds = technologies.map((tech: any) => tech.id);
 
-		// Extract just the IDs
-		const technologyIds = existingTechnologies.map((tech) => tech.id);
-
-		// Update the project
 		const updatedProject = await prisma.project.update({
 			where: { id: projectId },
 			data: {
@@ -114,13 +114,13 @@ export const updateProject = async (
 				image,
 				ctaText,
 				ctaLink,
-				technologies: technologyIds, // ✅ Updating stored technology IDs
+				technologies: technologyIds, // ✅ Ensure it's an array of strings (IDs)
 			},
 		});
 
 		return updatedProject;
 	} catch (error) {
-		console.error("Error updating project:", error);
-		throw new Error("Failed to update project. Please try again.");
+		console.error("❌ Error updating project:", error);
+		throw new Error("⚠️ Failed to update project. Please try again.");
 	}
 };

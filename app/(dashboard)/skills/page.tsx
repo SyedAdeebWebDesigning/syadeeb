@@ -1,5 +1,5 @@
 import React from "react";
-import { getSkills } from "@/lib/actions/skills.action";
+import { getTechnologies } from "@/lib/actions/skills.action";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
@@ -8,8 +8,9 @@ import SkillTable from "@/app/components/SkillTable";
 import { Technology } from "@prisma/client";
 
 const Page = async () => {
-	const data = await getSkills();
+	const data = await getTechnologies();
 	const skills = JSON.parse(JSON.stringify(data)) as Technology[];
+
 
 	if (skills.length === 0) {
 		return (

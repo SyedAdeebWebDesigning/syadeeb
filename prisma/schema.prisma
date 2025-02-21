@@ -60,9 +60,10 @@ model Project {
 }
 
 model Technology {
-  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  id               String  @id @default(auto()) @map("_id") @db.ObjectId
   name             String
   shortDescription String
   image            String
+  showOnSkill      Boolean @default(true)
   backgroundColor  String // Added missing field for background color
 }
