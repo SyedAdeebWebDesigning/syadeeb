@@ -1,138 +1,144 @@
-"use client"
+"use client";
 
-import {IoMdPin} from "react-icons/io";
-import {Avatar} from "@nextui-org/react";
-import {SocialIcon} from "react-social-icons";
-import {motion} from "framer-motion"
-import {BackgroundBeamsWithCollision} from "@/app/components/ui/background-beams-with-collision";
-import {useState} from "react";
+import { IoMdPin } from "react-icons/io";
+import { Avatar } from "@nextui-org/react";
+import { SocialIcon } from "react-social-icons";
+import { motion } from "framer-motion";
+import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
+import { useState } from "react";
 import Link from "next/link";
 
 const HeroSection = () => {
-    const [imageUrl, setImageUrl] = useState('/owner.webp')
-    return (
-        <section
-            className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
-            <BackgroundBeamsWithCollision className={''}>
-                {/* Location and Image */}
-                <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8">
-                    {/* Owner Image */}
-                    <motion.div
+	const [imageUrl, setImageUrl] = useState("/me.png");
+	return (
+		<section className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
+			<BackgroundBeamsWithCollision className={""}>
+				{/* Location and Image */}
+				<div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8">
+					{/* Owner Image */}
+					<motion.div
+						transition={{
+							delay: 1,
+							type: "spring",
+							stiffness: 120,
+							damping: 12,
+						}}
+						whileHover={{
+							rotate: 360, // Slight enlargement on hover
+						}}
+						className="border-primary border-4 p-1 rounded-full cursor-pointer "
+						onMouseEnter={() => {
+							setTimeout(() => {
+								setImageUrl("/me.png");
+							}, 1000);
+						}}
+						onMouseLeave={() => {
+							setTimeout(() => {
+								setImageUrl("/me.png");
+							}, 1000);
+						}}>
+						<Avatar
+							src={imageUrl}
+							className="w-[120px] h-[120px] lg:w-[250px] lg:h-[250px]"
+							size="lg"
+							alt="Syed Adeeb"
+						/>
+					</motion.div>
 
-                        transition={{
-                            delay: 1,
-                            type: "spring",
-                            stiffness: 120,
-                            damping: 12,
-                        }}
-                        whileHover={{
-                            rotate: 360, // Slight enlargement on hover
+					{/* Text Content */}
+					<div className="text-center lg:text-left">
+						{/* Location */}
+						<motion.div
+							className="flex items-center justify-center lg:justify-start space-x-2 mb-4"
+							initial={{ y: -200, opacity: 0 }}
+							animate={{ y: 0, opacity: 1 }}
+							transition={{ delay: 0.1 }}>
+							<IoMdPin className="text-2xl text-primary" />
+							<p className="text-xl lg:text-2xl text-neutral-500 dark:text-secondaryDark">
+								Aligarh, India
+							</p>
+						</motion.div>
 
-                        }}
-                        className="border-primary border-4 p-1 rounded-full cursor-pointer "
-                        onMouseEnter={() => {
-                            setTimeout(() => {
-                                setImageUrl('/ai.jpg');
-                            }, 1000)
+						{/* Main Heading */}
+						<motion.h1
+							initial={{ x: 200, opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{ delay: 0.25 }}
+							className="text-3xl text-neutral-700 dark:text-neutral-300 truncate  lg:text-5xl md:text-7xl font-extrabold leading-tight">
+							Hello, I'm <span className="text-primary">Syed Adeeb</span>.
+						</motion.h1>
 
-                        }}
-                        onMouseLeave={() => {
-                            setTimeout(() => {
-                                setImageUrl('/owner.webp');
-                            }, 1000)
-                        }}
-                    >
-                        <Avatar
-                            src={imageUrl}
-                            className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px]"
-                            alt="Syed Adeeb"
-                        />
-                    </motion.div>
+						{/* Subheading */}
+						<motion.p
+							className="mt-3 text-xl lg:text-2xl md:text-3xl text-neutral-500 dark:text-secondaryDark"
+							initial={{ x: 200, opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{ delay: 0.5 }}>
+							Full Stack Developer
+						</motion.p>
 
-                    {/* Text Content */}
-                    <div className="text-center sm:text-left">
-                        {/* Location */}
-                        <motion.div className="flex items-center justify-center sm:justify-start space-x-2 mb-4"
-                                    initial={{y: -200, opacity: 0}} animate={{y: 0, opacity: 1}}
-                                    transition={{delay: 0.1}}>
-                            <IoMdPin className="text-2xl text-primary"/>
-                            <p className="text-xl sm:text-2xl text-neutral-500 dark:text-secondaryDark">Aligarh,
-                                India</p>
-                        </motion.div>
-
-                        {/* Main Heading */}
-                        <motion.h1 initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}}
-                                   transition={{delay: 0.25}}
-                                   className="text-3xl text-neutral-700 dark:text-neutral-300 sm:text-5xl md:text-7xl font-extrabold leading-tight">
-                            Hello, I'm{" "}
-                            <span
-                                className="text-primary">Syed Adeeb</span>
-                            .
-                        </motion.h1>
-
-                        {/* Subheading */}
-                        <motion.p
-                            className="mt-3 text-xl sm:text-2xl md:text-3xl text-neutral-500 dark:text-secondaryDark"
-                            initial={{x: 200, opacity: 0}} animate={{x: 0, opacity: 1}}
-                            transition={{delay: 0.5}}>
-                            Full Stack Developer
-                        </motion.p>
-
-                        {/* Social Links and Resume */}
-                        <div className="mt-6 space-x-4 flex items-center justify-center sm:justify-start">
-                            {/* Social Icon */}
-                            <motion.div className={'cursor-pointer'} initial={{y: 200, opacity: 0}}
-                                        animate={{y: 0, opacity: 1}}
-                                        transition={{delay: 0.75}}
-                            ><SocialIcon
-                                url="https://www.linkedin.com/in/syed-adeeb-b40192331/"
-                                bgColor={"#3c3c3c"}
-                                fgColor={"#ffffff"}
-                                target="_blank"
-                                className="transition-transform duration-300 ease-in-out hover:scale-110"
-                            /></motion.div>
-                            <motion.div className={'cursor-pointer'} initial={{y: 200, opacity: 0}}
-                                        animate={{y: 0, opacity: 1}}
-                                        transition={{delay: 0.85}}
-                            ><SocialIcon
-                                url="https://www.instagram.com/prokximus/"
-                                bgColor={"#3c3c3c"}
-                                fgColor={"#ffffff"}
-                                target="_blank"
-                                className="transition-transform duration-300 ease-in-out hover:scale-110"
-                            /></motion.div>
-                            <motion.div className={'cursor-pointer'} initial={{y: 200, opacity: 0}}
-                                        animate={{y: 0, opacity: 1}}
-                                        transition={{delay: 0.95}}
-                            ><SocialIcon
-                                url="https://github.com/SyedAdeebWebDesigning"
-                                bgColor={"#3c3c3c"}
-                                fgColor={"#ffffff"}
-                                target="_blank"
-                                className="transition-transform duration-300 ease-in-out hover:scale-110"
-                            /></motion.div>
-                            {/* Resume Link */}
-                            <motion.div className={'cursor-pointer'} initial={{y: 200, opacity: 0}}
-                                        animate={{y: 0, opacity: 1}}
-                                        transition={{delay: 1.05}}
-                            >
-                                <Link
-                                    href="https://drive.google.com/file/d/1tNP4MWpOFyFWxw_BGqUZbZxbWs4l0MCm/view?usp=sharing"
-                                    target="_blank"
-                                >
-                                    <div
-                                        className="bg-[#3c3c3c] px-6 py-3 rounded-full text-white text-lg sm:text-xl font-medium transition-transform duration-300 ease-in-out hover:scale-110"
-                                    >
-                                        Resume
-                                    </div>
-                                </Link>
-                            </motion.div>
-                        </div>
-                    </div>
-                </div>
-            </BackgroundBeamsWithCollision>
-        </section>
-    );
+						{/* Social Links and Resume */}
+						<div className="mt-6 space-x-4 flex items-center justify-center lg:justify-start">
+							{/* Social Icon */}
+							<motion.div
+								className={"cursor-pointer"}
+								initial={{ y: 200, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{ delay: 0.75 }}>
+								<SocialIcon
+									url="https://www.linkedin.com/in/syed-adeeb-b40192331/"
+									bgColor={"#3c3c3c"}
+									fgColor={"#ffffff"}
+									target="_blank"
+									className="transition-transform duration-300 ease-in-out hover:scale-110"
+								/>
+							</motion.div>
+							<motion.div
+								className={"cursor-pointer"}
+								initial={{ y: 200, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{ delay: 0.85 }}>
+								<SocialIcon
+									url="https://www.instagram.com/prokximus/"
+									bgColor={"#3c3c3c"}
+									fgColor={"#ffffff"}
+									target="_blank"
+									className="transition-transform duration-300 ease-in-out hover:scale-110"
+								/>
+							</motion.div>
+							<motion.div
+								className={"cursor-pointer"}
+								initial={{ y: 200, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{ delay: 0.95 }}>
+								<SocialIcon
+									url="https://github.com/SyedAdeebWebDesigning"
+									bgColor={"#3c3c3c"}
+									fgColor={"#ffffff"}
+									target="_blank"
+									className="transition-transform duration-300 ease-in-out hover:scale-110"
+								/>
+							</motion.div>
+							{/* Resume Link */}
+							<motion.div
+								className={"cursor-pointer"}
+								initial={{ y: 200, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{ delay: 1.05 }}>
+								<Link
+									href="https://drive.google.com/file/d/1tNP4MWpOFyFWxw_BGqUZbZxbWs4l0MCm/view?usp=sharing"
+									target="_blank">
+									<div className="bg-[#3c3c3c] px-6 py-3 rounded-full text-white text-lg lg:text-xl font-medium transition-transform duration-300 ease-in-out hover:scale-110">
+										Resume
+									</div>
+								</Link>
+							</motion.div>
+						</div>
+					</div>
+				</div>
+			</BackgroundBeamsWithCollision>
+		</section>
+	);
 };
 
 export default HeroSection;
