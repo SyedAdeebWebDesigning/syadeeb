@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
 import { useState } from "react";
 import Link from "next/link";
+import { ColourfulText } from "./ui/colorfull-text";
 
 const HeroSection = () => {
 	const [imageUrl, setImageUrl] = useState("/me.png");
@@ -65,7 +66,7 @@ const HeroSection = () => {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.25 }}
 							className="text-3xl text-neutral-700 dark:text-neutral-300 truncate  lg:text-5xl md:text-7xl font-extrabold leading-tight">
-							Hello, I'm <span className="text-primary">Syed Adeeb</span>.
+							Hello, I'm <ColourfulText text="Syed Adeeb" />.
 						</motion.h1>
 
 						{/* Subheading */}
