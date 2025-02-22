@@ -11,7 +11,7 @@ import { ColourfulText } from "./ui/colorfull-text";
 import { Vortex } from "./ui/vortex";
 
 const HeroSection = () => {
-	const [imageUrl, setImageUrl] = useState("/me.png");
+	const [imageUrl, setImageUrl] = useState("/me.webp");
 	const deviceWidth = window.innerWidth;
 	return (
 		<Vortex
@@ -36,12 +36,12 @@ const HeroSection = () => {
 						className="border-primary border-4 p-1 rounded-full cursor-pointer "
 						onMouseEnter={() => {
 							setTimeout(() => {
-								setImageUrl("/me.png");
+								setImageUrl("/me.webp");
 							}, 1000);
 						}}
 						onMouseLeave={() => {
 							setTimeout(() => {
-								setImageUrl("/me.png");
+								setImageUrl("/me.webp");
 							}, 1000);
 						}}>
 						<Avatar
