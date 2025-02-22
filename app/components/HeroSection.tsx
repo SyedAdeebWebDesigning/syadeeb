@@ -12,8 +12,14 @@ import { Vortex } from "./ui/vortex";
 
 const HeroSection = () => {
 	const [imageUrl, setImageUrl] = useState("/me.png");
+	const deviceWidth = window.innerWidth;
+	console.log(deviceWidth);
+
 	return (
-		<Vortex backgroundColor="rgba(255,255,255,0)" className="max-w-3xl mx-auto">
+		<Vortex
+			backgroundColor="rgba(255,255,255,0)"
+			className="max-w-3xl mx-auto"
+			particleCount={deviceWidth > 768 ? 1470 : 500}>
 			<section className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
 				{/* <BackgroundBeamsWithCollision className={""}> */}
 				{/* Location and Image */}
@@ -73,7 +79,7 @@ const HeroSection = () => {
 
 						{/* Subheading */}
 						<motion.p
-							className="mt-3 text-xl lg:text-2xl md:text-3xl text-neutral-500 dark:text-secondaryDark"
+							className="mt-3 text-xl lg:text-2xl md:text-3xl text-neutral-500 dark:text-neutral-300"
 							initial={{ x: 200, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.5 }}>

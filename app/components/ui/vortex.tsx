@@ -60,6 +60,8 @@ export const Vortex = (props: VortexProps) => {
 	const lerp = (n1: number, n2: number, speed: number): number =>
 		(1 - speed) * n1 + speed * n2;
 
+        
+
 	const setup = () => {
 		const canvas = canvasRef.current;
 		const container = containerRef.current;
