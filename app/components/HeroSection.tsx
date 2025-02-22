@@ -5,7 +5,7 @@ import { Avatar } from "@nextui-org/react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ColourfulText } from "./ui/colorfull-text";
 import { Vortex } from "./ui/vortex";
@@ -13,8 +13,6 @@ import { Vortex } from "./ui/vortex";
 const HeroSection = () => {
 	const [imageUrl, setImageUrl] = useState("/me.png");
 	const deviceWidth = window.innerWidth;
-	console.log(deviceWidth);
-
 	return (
 		<Vortex
 			backgroundColor="rgba(255,255,255,0)"

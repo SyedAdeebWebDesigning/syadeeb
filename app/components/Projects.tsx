@@ -1,4 +1,6 @@
 "use client";
+
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import React, { useEffect, useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -6,8 +8,6 @@ import { Project, Technology } from "@prisma/client";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export function Projects({ projects }: { projects: Project[] }) {
-	console.log(projects);
-
 	const [active, setActive] = useState<any | null>(null);
 	const id = useId();
 
