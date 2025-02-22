@@ -8,14 +8,16 @@ import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-bea
 import { useState } from "react";
 import Link from "next/link";
 import { ColourfulText } from "./ui/colorfull-text";
+import { Vortex } from "./ui/vortex";
 
 const HeroSection = () => {
 	const [imageUrl, setImageUrl] = useState("/me.png");
 	return (
-		<section className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
-			<BackgroundBeamsWithCollision className={""}>
+		<Vortex backgroundColor="rgba(255,255,255,0)" className="max-w-3xl mx-auto">
+			<section className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
+				{/* <BackgroundBeamsWithCollision className={""}> */}
 				{/* Location and Image */}
-				<div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8">
+				<div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8  backdrop-blur-[2px] rounded-full p-20 bg-white/10 dark:bg-neutral-800/10">
 					{/* Owner Image */}
 					<motion.div
 						transition={{
@@ -47,7 +49,7 @@ const HeroSection = () => {
 					</motion.div>
 
 					{/* Text Content */}
-					<div className="text-center lg:text-left">
+					<div className="text-center lg:text-left ">
 						{/* Location */}
 						<motion.div
 							className="flex items-center justify-center lg:justify-start space-x-2 mb-4"
@@ -55,7 +57,7 @@ const HeroSection = () => {
 							animate={{ y: 0, opacity: 1 }}
 							transition={{ delay: 0.1 }}>
 							<IoMdPin className="text-2xl text-primary" />
-							<p className="text-xl lg:text-2xl text-neutral-500 dark:text-secondaryDark">
+							<p className="text-xl lg:text-2xl text-neutral-700 dark:text-neutral-300">
 								Aligarh, India
 							</p>
 						</motion.div>
@@ -66,7 +68,7 @@ const HeroSection = () => {
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.25 }}
 							className="text-3xl text-neutral-700 dark:text-neutral-300 truncate  lg:text-5xl md:text-7xl font-extrabold leading-tight">
-							Hello, I'm <ColourfulText text="Syed Adeeb" />.
+							Hello, I'm <ColourfulText text="Syed Adeeb" />
 						</motion.h1>
 
 						{/* Subheading */}
@@ -137,8 +139,9 @@ const HeroSection = () => {
 						</div>
 					</div>
 				</div>
-			</BackgroundBeamsWithCollision>
-		</section>
+				{/* </BackgroundBeamsWithCollision> */}
+			</section>
+		</Vortex>
 	);
 };
 
