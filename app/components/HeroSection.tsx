@@ -21,7 +21,7 @@ const HeroSection = () => {
 			<section className="h-[80vh] md:h-[80vh] flex items-center justify-center flex-col px-4 bg-background">
 				{/* <BackgroundBeamsWithCollision className={""}> */}
 				{/* Location and Image */}
-				<div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8  backdrop-blur-[2px] rounded-full p-20 bg-white/10 dark:bg-neutral-800/10">
+				<div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8  backdrop-blur-[2px] rounded-full p-20 bg-white/10 dark:bg-neutral-800/10 overflow-x-hidden">
 					{/* Owner Image */}
 					<motion.div
 						transition={{

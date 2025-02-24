@@ -24,7 +24,7 @@ export default async function Home() {
 			<section className="border-b border-black/10 dark:border-white/10 sticky top-0 text-black dark:text-white z-[999]">
 				<NavBar />
 			</section>
-			<section id={"#hero"}>
+			<section id={"#hero"} className="overflow-x-hidden">
 				<HeroSection />
 			</section>
 			<section id="experience" className={""}>
