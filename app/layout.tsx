@@ -59,7 +59,7 @@ export default function RootLayout({
 					// formField
 				},
 			}}>
-			<html lang="en" className={"scroll-smooth"}>
+			<html lang="en" className={"scroll-smooth overflow-x-hidden"}>
 				<body
 					className={`text-[#fff] font-sans bg-[#ebebeb] dark:bg-[#181818]`}>
 					<NextUIProvider>
