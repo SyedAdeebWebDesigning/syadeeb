@@ -3,39 +3,50 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Thesignature Regular';
-    src: url('fonts/thesignature.regular.otf') format('opentype'); /* OpenType format for compatibility */
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Thesignature Regular";
+	src: url("fonts/thesignature.regular.otf") format("opentype"); /* OpenType format for compatibility */
+	font-weight: normal;
+	font-style: normal;
 }
 
 .timeline-line {
-    background: linear-gradient(to bottom, transparent 0%, gray 50%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    width: 2px;
-    mask-composite: exclude;
-    position: absolute;
-    left: 8px;
-    top: 0;
+	background: linear-gradient(
+		to bottom,
+		transparent 0%,
+		gray 50%,
+		transparent 100%
+	);
+	mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black 10%,
+		black 90%,
+		transparent 100%
+	);
+	width: 2px;
+	mask-composite: exclude;
+	position: absolute;
+	left: 8px;
+	top: 0;
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px inset !important; /* Ensures background matches */
-    -webkit-text-fill-color: white !important; /* Keeps text white */
+	-webkit-box-shadow: 0 0 0 30px inset !important; /* Ensures background matches */
+	-webkit-text-fill-color: white !important; /* Keeps text white */
 }
 
 input:-webkit-autofill:focus {
-    -webkit-text-fill-color: white !important;
+	-webkit-text-fill-color: white !important;
 }
 
 .logo-text {
-    font-family: 'Thesignature Regular', sans-serif; /* Use your font as the primary body font */
+	font-family: "Thesignature Regular", sans-serif; /* Use your font as the primary body font */
 }
 
 .cl-internal-1dauvpw {
-    display: none
+	display: none;
 }
 
 .contact-input {
-    @apply text-black dark:text-white;
+	@apply text-black dark:text-white;
 }

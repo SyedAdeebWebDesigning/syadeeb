@@ -9,6 +9,7 @@ import Skills from "@/app/components/Skills";
 import Contact from "@/app/components/Contact";
 import { getExperiences } from "@/lib/actions/experience.action";
 import { getProjects } from "@/lib/actions/projects.action";
+import Script from "next/script";
 
 export default async function Home() {
 	const data = await getExperiences();
@@ -17,7 +18,7 @@ export default async function Home() {
 	const projectData = await getProjects();
 	const projects = JSON.parse(JSON.stringify(projectData));
 	return (
-		<>
+		<section id="body">
 			<div className={"fixed right-2 bottom-2 z-[999]"}>
 				<RedirectToDashboard />
 			</div>
@@ -59,6 +60,41 @@ export default async function Home() {
 					<Contact />
 				</MaxWidthWrapper>
 			</section>
-		</>
+			<Script id="smooth-scrolling" strategy="afterInteractive">
+				{`
+					const container = document.getElementById("body");
+
+					// Set full body height to enable scrolling
+					function setBodyHeight() {
+						document.body.style.height = container.scrollHeight + "px";
+					}
+					window.addEventListener("load", setBodyHeight);
+					window.addEventListener("resize", setBodyHeight);
+
+					let currentScroll = 0;
+					let targetScroll = 0;
+					let easeFactor = 0.08; // Lower = slower, Higher = faster
+
+					function smoothScroll() {
+						currentScroll += (targetScroll - currentScroll) * easeFactor;
+						container.style.transform = "translateY(" + -currentScroll + "px)";
+						requestAnimationFrame(smoothScroll);
+					}
+
+					// Capture scroll input and control speed
+					window.addEventListener(
+						"wheel",
+						(event) => {
+							targetScroll += event.deltaY * 0.8; // Adjust sensitivity
+							targetScroll = Math.max(0, Math.min(targetScroll, container.scrollHeight - window.innerHeight));
+							event.preventDefault(); // Disable native scrolling
+						},
+						{ passive: false }
+					);
+
+					smoothScroll();
+				`}
+			</Script>
+		</section>
 	);
 }

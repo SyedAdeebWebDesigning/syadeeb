@@ -7,6 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import React from "react";
 import { Providers } from "@/app/providers";
+import Script from "next/script";
 
 export const metadata: Metadata = {
 	title: "Syed Adeeb",
@@ -59,17 +60,22 @@ export default function RootLayout({
 					// formField
 				},
 			}}>
-			<html lang="en" className={"scroll-smooth overflow-x-hidden"}>
+			<html lang="en" className={"scroll-smooth "}>
 				<body
-					className={`text-[#fff] font-sans bg-[#ebebeb] dark:bg-[#181818]`}>
+					className={`text-[#fff] font-sans bg-[#ebebeb] dark:bg-[#181818] overflow-x-hidden`}>
 					<NextUIProvider>
 						<Providers>
 							<ToastContainer autoClose={1500} theme="colored" />
-							<main className={"bg-[#ebebeb] dark:bg-[#181818]"}>
+							<main
+								className={"bg-[#ebebeb] dark:bg-[#181818]"}
+								id="scroll-container">
 								{children}
 							</main>
 						</Providers>
 					</NextUIProvider>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+					<script src="/slow-scrolling.js" defer></script>
 				</body>
 			</html>
 		</ClerkProvider>
