@@ -133,7 +133,7 @@ const HeroSection = () => {
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 1.05 }}>
 								<Link
-									href="https://app.enhancv.com/share/811a3201/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+									href="https://drive.google.com/file/d/1rgRm66NjVGWSkShdTyuZRuyB-6TT6V8n/view?usp=sharing"
 									target="_blank">
 									<div className="bg-[#3c3c3c] px-6 py-3 rounded-full text-white text-lg lg:text-xl font-medium transition-transform duration-300 ease-in-out hover:scale-110">
 										Resume
