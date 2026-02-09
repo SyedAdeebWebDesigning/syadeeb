@@ -23,7 +23,7 @@ export const getProjects = async () => {
 					where: { id: { in: project.technologies } },
 				});
 				return { ...project, technologies };
-			})
+			}),
 		);
 
 		return projectsWithTechnologies ?? null;
@@ -91,7 +91,7 @@ export const addProjects = async (data: ProjectData) => {
 // ✅ Update an existing project
 export const updateProject = async (
 	project: ProjectData,
-	projectId: string
+	projectId: string,
 ) => {
 	try {
 		const {
@@ -103,8 +103,10 @@ export const updateProject = async (
 			technologies = [],
 		} = project;
 
-		// ✅ Extract only technology IDs
-		const technologyIds = technologies.map((tech: any) => tech.id);
+		// 🔥 Normalize → always string IDs
+		const technologyIds = technologies.map((tech: any) =>
+			typeof tech === "string" ? tech : String(tech.id),
+		);
 
 		const updatedProject = await prisma.project.update({
 			where: { id: projectId },
@@ -114,7 +116,7 @@ export const updateProject = async (
 				image,
 				ctaText,
 				ctaLink,
-				technologies: technologyIds, // ✅ Ensure it's an array of strings (IDs)
+				technologies: technologyIds, // pure string[]
 			},
 		});
 
