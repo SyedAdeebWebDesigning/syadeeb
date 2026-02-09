@@ -29,12 +29,12 @@ const Contact = () => {
 		<div>
 			<div className="flex flex-col w-fit mx-auto gap-y-2 mb-10 sm:-mt-10">
 				<Link
-					href={"mailto:syedadeebwork@gmail.com"}
+					href={"mailto:me@syedadeeb.in"}
 					className={
 						"flex space-x-2 items-center text-neutral-800 dark:text-neutral-200"
 					}>
 					<Mail className={"text-primary"} />
-					<h1 className={"text-xl"}>syedadeebwork@gmail.com</h1>
+					<h1 className={"text-xl"}>me@syedadeeb.in</h1>
 				</Link>
 				<Link
 					href={"tel:+918630766188"}
