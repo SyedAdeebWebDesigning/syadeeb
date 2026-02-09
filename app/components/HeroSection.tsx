@@ -93,7 +93,7 @@ const HeroSection = () => {
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 0.75 }}>
 								<SocialIcon
-									url="https://www.linkedin.com/in/syed-adeeb-b40192331/"
+									url="https://linkedin.syedadeeb.in"
 									bgColor={"#3c3c3c"}
 									fgColor={"#ffffff"}
 									target="_blank"
@@ -106,7 +106,7 @@ const HeroSection = () => {
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 0.85 }}>
 								<SocialIcon
-									url="https://www.instagram.com/prokximus/"
+									url="https://instagram.syedadeeb.in"
 									bgColor={"#3c3c3c"}
 									fgColor={"#ffffff"}
 									target="_blank"
@@ -132,9 +132,7 @@ const HeroSection = () => {
 								initial={{ y: 200, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 1.05 }}>
-								<Link
-									href="/Syed_Adeeb_Resume.pdf"
-									target="_blank">
+								<Link href="/Syed_Adeeb_Resume.pdf" target="_blank">
 									<div className="bg-[#3c3c3c] px-6 py-3 rounded-full text-white text-lg lg:text-xl font-medium transition-transform duration-300 ease-in-out hover:scale-110">
 										Resume
 									</div>
