@@ -61,16 +61,15 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 		e.preventDefault();
 		setIsLoading(true);
 
+		const projectData = {
+			title,
+			description,
+			image: image || "", // Ensure image is not null
+			ctaText,
+			ctaLink,
+			technologies: arrayTechnologies, // ✅ Store selected technology IDs
+		};
 		try {
-			const projectData = {
-				title,
-				description,
-				image: image || "", // Ensure image is not null
-				ctaText,
-				ctaLink,
-				technologies: arrayTechnologies, // ✅ Store selected technology IDs
-			};
-
 			if (type === "create") {
 				await addProjects(projectData);
 				// Reset form
