@@ -8,8 +8,6 @@ export const getSkills = async () => {
 
 		const skills = allTechnologies.filter((tech) => tech.showOnSkill === true); // 👈 Manually filter
 
-		console.log("✅ Filtered Skills:", skills); // Debugging
-
 		return skills.length > 0 ? skills : null; // Return null if empty
 	} catch (error) {
 		console.error("❌ Error fetching skills:", error);
@@ -77,7 +75,7 @@ export const addSkill = async (
 	name: string,
 	shortDescription: string,
 	backgroundColor: string,
-	image: string
+	image: string,
 ) => {
 	try {
 		if (!name || !shortDescription || !backgroundColor || !image) {

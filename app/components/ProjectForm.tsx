@@ -44,8 +44,6 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 		}
 	}, [type, project]);
 
-	console.log(arrayTechnologies);
-
 	// ✅ Convert image file to Base64 string
 	const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const file = e.target.files?.[0];
@@ -72,8 +70,6 @@ const ProjectForm = ({ type, skills, project }: ProjectFormProps) => {
 				ctaLink,
 				technologies: arrayTechnologies, // ✅ Store selected technology IDs
 			};
-
-			console.log("Submitted Data:", projectData);
 
 			if (type === "create") {
 				await addProjects(projectData);
