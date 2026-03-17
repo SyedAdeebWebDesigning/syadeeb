@@ -1,12 +1,11 @@
 "use client";
 
-import { IoMdPin } from "react-icons/io";
 import { Avatar } from "@nextui-org/react";
-import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
+import { IoMdPin } from "react-icons/io";
+import { SocialIcon } from "react-social-icons";
 import { ColourfulText } from "./ui/colorfull-text";
 import { Vortex } from "./ui/vortex";
 
